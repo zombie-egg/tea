@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact TeaSourcex for inquiry, sample request, WhatsApp, email and phone." />
+    <title>Contact | TeaSourcex</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="css/style.css" /><link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <button class="mobile-menu-btn" aria-label="Open navigation"><i class="bi bi-list"></i></button>
+    <aside class="sidebar"><a class="brand" href="index.html"><span>茶</span><strong>TeaSourcex</strong><small>Tea Partner</small></a><nav class="side-nav"><div class="nav-group"><b>About</b><a href="about.html#brand-story">📁 Brand Story</a><a href="about.html#factory">📁 Factory & Capacity</a><a href="about.html#team">📁 Our Team</a></div><div class="nav-group"><b>Products</b><a href="products.html#rtd">📁 RTD Tea Bases</a><a href="products.html#extracts">📁 Tea Extracts & Powders</a><a href="products.html#ingredients">📁 Tea Ingredients</a><a href="products.html#oem">📁 OEM/ODM Service</a></div><div class="nav-group"><b>Solutions</b><a href="solutions.html#manufacturers">📁 For Beverage Manufacturers</a><a href="solutions.html#brands">📁 For Brands / OEM Partner</a><a href="solutions.html#chains">📁 For F&B Chains</a></div><div class="nav-group"><b>Quality</b><a href="quality.html#certifications">📁 Certifications</a><a href="quality.html#qa">📁 QA System</a><a href="quality.html#rd">📁 R&D Capability</a></div><div class="nav-group"><b>Resources</b><a href="resources.html#blog">📁 Blog / Tea Knowledge</a><a href="resources.html#sop">📁 Recipe & SOP Library</a><a href="resources.html#faq">📁 FAQ</a></div><div class="nav-group"><b>Contact</b><a href="#inquiry">📁 Inquiry Form</a><a href="#sample">📁 Sample Request Form</a></div></nav></aside><div class="menu-backdrop"></div>
+    <main class="page">
+      <a class="home-button" href="index.html"><i class="bi bi-house-door-fill"></i> Home</a>
+      <section class="panel reveal"><p class="eyebrow">Contact</p><h1>Start your tea project</h1><p class="note">Demo form: replace with Formspree, CRM or backend API before launch.</p></section>
+      <section class="panel reveal contact-layout">
+        <form class="form-grid" id="inquiry" data-redirect="thank-you-inquiry.html" data-mailto="sales@example.com" data-subject="TeaSourcex Inquiry">
+          <h2>Inquiry Form</h2>
+          <div class="form-row"><label>Company Name<input name="company" required placeholder="Company Ltd." /></label><label>Contact Person<input name="contact" required placeholder="Name" /></label></div>
+          <div class="form-row"><label>Email<input type="email" name="email" required placeholder="name@example.com" /></label><label>Phone<input name="phone" placeholder="+1 000 000 0000" /></label></div>
+          <div class="form-row"><label>Product Interest<select name="interest"><option>RTD Tea Bases</option><option>Tea Extracts & Powders</option><option>Tea Ingredients</option><option>OEM/ODM Service</option></select></label><label>Inquiry Quantity<input name="quantity" placeholder="e.g. 500 kg" /></label></div>
+          <label>Message<textarea name="message" rows="5" placeholder="Tell us your application."></textarea></label>
+          <button class="btn primary" type="submit">Submit Inquiry</button>
+        </form>
+        <aside class="contact-box"><h2>Contact Info</h2><p><i class="bi bi-geo-alt-fill"></i> Business address</p><p><i class="bi bi-envelope-fill"></i> sales@example.com</p><p><i class="bi bi-telephone-fill"></i> +86 000 0000 0000</p><a class="btn primary" href="https://wa.me/8600000000000" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp</a></aside>
+      </section>
+      <section class="panel reveal" id="sample">
+        <form class="form-grid" data-redirect="thank-you-sample.html" data-mailto="sales@example.com" data-subject="TeaSourcex Sample Request">
+          <h2>Sample Request Form</h2>
+          <div class="form-row"><label>Product Type<select name="product_type"><option>RTD Tea Bases</option><option>Tea Extracts & Powders</option><option>Tea Ingredients</option></select></label><label>Sample Quantity<input name="sample_quantity" required placeholder="e.g. 3 packs" /></label></div>
+          <div class="form-row"><label>Monthly Demand<input name="monthly_demand" placeholder="e.g. 1 ton" /></label><label>Email<input type="email" name="email" required placeholder="name@example.com" /></label></div>
+          <label>Message<textarea name="message" rows="4" placeholder="Sample requirements."></textarea></label>
+          <button class="btn primary" type="submit">Submit Sample Request</button>
+        </form>
+      </section>
+    </main>
+    <a class="whatsapp-float" href="https://wa.me/8600000000000" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i></a>
+    <script src="js/countup.min.js"></script><script src="js/isotope.pkgd.min.js"></script><script src="js/lightbox.min.js"></script><script src="js/main.js"></script>
+  </body>
+</html>
