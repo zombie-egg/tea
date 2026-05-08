@@ -72,6 +72,19 @@ The admin panel has three areas:
 
 When visitors submit the inquiry or sample form, the records are saved in the backend and appear in `Admin > Submissions`.
 
+## Acceptance Checklist
+
+- Inquiry Form: submits to `/api/inquiries`, saves in backend, redirects to `thank-you-inquiry.html`.
+- Sample Request Form: submits to `/api/sample-requests`, saves in backend, redirects to `thank-you-sample.html`.
+- WhatsApp Floating Button: visible on all public pages and links to `wa.me`.
+- Blog / Articles: list, tags, detail pages and admin article editing are available.
+- Mobile Responsive: existing responsive layout remains active for public pages and forms.
+- Home CountUp: homepage number animation remains active.
+- Certificate Lightbox: certification cards open enlarged preview.
+- SOP Accordion: SOP entries expand and collapse.
+- Thank You Pages: both success pages are independent and `noindex`.
+- Website Language: English and Chinese switching remains available.
+
 The admin panel can edit:
 
 - Company address, email, phone, WhatsApp number

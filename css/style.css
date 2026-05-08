@@ -812,6 +812,12 @@ textarea:focus {
   background: #1fb457;
 }
 
+.whatsapp-float span {
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
 .footer {
   margin-left: var(--sidebar);
   padding: 24px clamp(16px, 4vw, 56px);

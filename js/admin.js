@@ -128,6 +128,9 @@ async function saveSiteData(statusElement) {
 }
 
 function renderSubmissions(store) {
+  const count = (store.inquiries || []).length + (store.sampleRequests || []).length;
+  const submissionsTab = document.querySelector('[data-admin-tab="submissions"]');
+  if (submissionsTab) submissionsTab.textContent = `Submissions (${count})`;
   const render = items => {
     if (!items.length) return "<p>No submissions yet.</p>";
     return items.map(item => `

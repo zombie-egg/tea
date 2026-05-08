@@ -302,6 +302,17 @@ function escapeHtml(value){
 function currentLang(){
   return localStorage.getItem("siteLanguage")||"en";
 }
+function ensureWhatsAppFloat(){
+  if(document.querySelector(".whatsapp-float")||document.querySelector(".admin-page"))return;
+  const link=document.createElement("a");
+  link.className="whatsapp-float";
+  link.href="https://wa.me/8600000000000";
+  link.target="_blank";
+  link.rel="noopener";
+  link.setAttribute("aria-label","Contact on WhatsApp");
+  link.innerHTML="<span>WA</span>";
+  document.body.appendChild(link);
+}
 function localizedProduct(product, field){
   return currentLang()==="zh" && product[`${field}Zh`] ? product[`${field}Zh`] : product[field];
 }
@@ -435,6 +446,7 @@ const languageSwitch=createLanguageSwitch();
 const languageSelect=languageSwitch.querySelector("select");
 languageSelect.value=localStorage.getItem("siteLanguage")||"en";
 languageSelect.addEventListener("change",()=>applyLanguage(languageSelect.value));
+ensureWhatsAppFloat();
 applyLanguage(languageSelect.value);
 document.querySelector(".mobile-menu-btn")?.addEventListener("click",()=>body.classList.toggle("menu-open"));
 document.querySelector(".menu-backdrop")?.addEventListener("click",()=>body.classList.remove("menu-open"));
