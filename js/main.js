@@ -335,6 +335,32 @@ function renderProducts(products){
   `).join("");
   if(typeof filterCards==="function")filterCards(".product-grid",".filter-bar [data-filter]",".product-card");
 }
+function localizedArticle(article, field){
+  return currentLang()==="zh" && article[`${field}Zh`] ? article[`${field}Zh`] : article[field];
+}
+function renderArticles(articles){
+  const list=document.querySelector("[data-article-list]");
+  if(!list)return;
+  list.innerHTML=articles.map(article=>`
+    <article class="resource-card blog-card" data-filter="${escapeHtml(article.tag)}">
+      <h3>${escapeHtml(localizedArticle(article,"title"))}</h3>
+      <p>${escapeHtml(localizedArticle(article,"summary"))}</p>
+      <a href="resources/blog/${escapeHtml(article.slug)}.html">Read Article</a>
+    </article>
+  `).join("");
+  if(typeof filterCards==="function")filterCards(".blog-list",".tag-filter [data-filter]",".blog-card");
+}
+function renderArticleDetail(articles){
+  const detail=document.querySelector("[data-article-detail]");
+  if(!detail)return;
+  const slug=location.pathname.split("/").pop()?.replace(".html","");
+  const article=articles.find(item=>item.slug===slug)||articles[0];
+  if(!article)return;
+  detail.querySelector("h1").textContent=localizedArticle(article,"title");
+  detail.querySelector("[data-article-summary]").textContent=localizedArticle(article,"summary");
+  detail.querySelector("[data-article-body]").textContent=localizedArticle(article,"body");
+  document.title=`${localizedArticle(article,"title")} | TeaSourcex Blog`;
+}
 function applyProductDetail(products){
   const slug=location.pathname.split("/").pop()?.replace(".html","");
   const product=products.find(item=>item.slug===slug);
@@ -352,6 +378,8 @@ function applySiteData(){
   applyProductSelects(currentSiteData.products||[]);
   renderProducts(currentSiteData.products||[]);
   applyProductDetail(currentSiteData.products||[]);
+  renderArticles(currentSiteData.articles||[]);
+  renderArticleDetail(currentSiteData.articles||[]);
 }
 async function loadSiteData(){
   if(location.protocol==="file:")return;

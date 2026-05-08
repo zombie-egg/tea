@@ -52,12 +52,33 @@ data/submissions.json
 
 ## Admin Editing
 
+Client admin URL:
+
+```text
+/admin.html
+```
+
+After deployment, the client opens:
+
+```text
+https://your-domain.com/admin.html
+```
+
+The admin panel has three areas:
+
+- `Content`: edit contact information and product details.
+- `Articles`: add or edit blog articles, tags, summaries and article body.
+- `Submissions`: view inquiry form submissions and sample request submissions.
+
+When visitors submit the inquiry or sample form, the records are saved in the backend and appear in `Admin > Submissions`.
+
 The admin panel can edit:
 
 - Company address, email, phone, WhatsApp number
 - Product title, Chinese title, category filter, image URL
 - Product English/Chinese summaries
 - Product English/Chinese details
+- Blog article slug, tag, English/Chinese title, summaries and body
 - Inquiry and sample request submissions
 
 ## Deployment Notes

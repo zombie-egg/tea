@@ -28,6 +28,7 @@
       <section class="panel admin-workspace" id="admin-workspace" hidden>
         <div class="tabs">
           <button class="active" type="button" data-admin-tab="content">Content</button>
+          <button type="button" data-admin-tab="articles">Articles</button>
           <button type="button" data-admin-tab="submissions">Submissions</button>
         </div>
 
@@ -46,6 +47,17 @@
             <div class="admin-products" data-admin-products></div>
             <button class="btn primary" type="submit">Save Content</button>
             <p class="note" data-save-status></p>
+          </form>
+        </div>
+
+        <div data-admin-panel="articles" hidden>
+          <form class="form-grid" id="article-data-form">
+            <h2>Blog Articles</h2>
+            <p class="note">Add or edit article list items and article detail content. URL format: /resources/blog/article-slug.html</p>
+            <div class="admin-products" data-admin-articles></div>
+            <button class="btn ghost" type="button" data-add-article>Add Article</button>
+            <button class="btn primary" type="submit">Save Articles</button>
+            <p class="note" data-article-save-status></p>
           </form>
         </div>
 

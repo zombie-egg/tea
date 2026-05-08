@@ -226,6 +226,19 @@ p {
   white-space: pre-wrap;
 }
 
+.thank-you-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+.thank-you-popup {
+  width: min(680px, calc(100vw - 32px));
+  text-align: center;
+  border-width: 2px;
+  box-shadow: 0 28px 80px rgba(63, 43, 29, 0.22);
+}
+
 .nav-group {
   display: grid;
   gap: 4px;

@@ -1,1 +1,26 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Sample request form."><title>Sample Request Form | TeaSourcex</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"></head><body><main class="page" style="margin-left:0"><section class="panel reveal visible"><p class="eyebrow">Contact</p><h1>Sample Request Form</h1><p>Use the main contact page sample request form.</p><a class="btn primary" href="../contact.html#sample">Open Form</a></section></main><script src="../js/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sample request form." />
+    <title>Sample Request Form | TeaSourcex</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <main class="page" style="margin-left:0">
+      <section class="panel reveal visible">
+        <p class="eyebrow">Contact</p>
+        <h1>Sample Request Form</h1>
+        <form class="form-grid" data-api="/api/sample-requests" data-redirect="../thank-you-sample.html">
+          <div class="form-row"><label>Product Type<select name="product_type" data-product-select><option>RTD Tea Bases</option><option>Tea Extracts & Powders</option><option>Tea Ingredients</option></select></label><label>Sample Quantity<input name="sample_quantity" required placeholder="e.g. 3 packs" /></label></div>
+          <div class="form-row"><label>Monthly Demand<input name="monthly_demand" placeholder="e.g. 1 ton" /></label><label>Email<input type="email" name="email" required placeholder="name@example.com" /></label></div>
+          <label>Message<textarea name="message" rows="4" placeholder="Sample requirements."></textarea></label>
+          <button class="btn primary" type="submit">Submit Sample Request</button>
+        </form>
+      </section>
+    </main>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

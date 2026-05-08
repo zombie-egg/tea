@@ -1,1 +1,27 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Inquiry form."><title>Inquiry Form | TeaSourcex</title><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"></head><body><main class="page" style="margin-left:0"><section class="panel reveal visible"><p class="eyebrow">Contact</p><h1>Inquiry Form</h1><p>Use the main contact page inquiry form.</p><a class="btn primary" href="../contact.html#inquiry">Open Form</a></section></main><script src="../js/main.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Inquiry form." />
+    <title>Inquiry Form | TeaSourcex</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <main class="page" style="margin-left:0">
+      <section class="panel reveal visible">
+        <p class="eyebrow">Contact</p>
+        <h1>Inquiry Form</h1>
+        <form class="form-grid" data-api="/api/inquiries" data-redirect="../thank-you-inquiry.html">
+          <div class="form-row"><label>Company Name<input name="company" required placeholder="Company Ltd." /></label><label>Contact Person<input name="contact" required placeholder="Name" /></label></div>
+          <div class="form-row"><label>Email<input type="email" name="email" required placeholder="name@example.com" /></label><label>Phone<input name="phone" placeholder="+1 000 000 0000" /></label></div>
+          <div class="form-row"><label>Product Interest<select name="interest" data-product-select><option>RTD Tea Bases</option><option>Tea Extracts & Powders</option><option>Tea Ingredients</option><option>OEM/ODM Service</option></select></label><label>Inquiry Quantity<input name="quantity" placeholder="e.g. 500 kg" /></label></div>
+          <label>Message<textarea name="message" rows="5" placeholder="Tell us your application."></textarea></label>
+          <button class="btn primary" type="submit">Submit Inquiry</button>
+        </form>
+      </section>
+    </main>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

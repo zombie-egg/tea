@@ -92,7 +92,10 @@ function serveStatic(req, res) {
   const url = new URL(req.url, `http://${req.headers.host}`);
   let pathname = decodeURIComponent(url.pathname);
   if (pathname === "/") pathname = "/index.html";
-  const filePath = path.normalize(path.join(root, pathname));
+  let filePath = path.normalize(path.join(root, pathname));
+  if (!fs.existsSync(filePath) && pathname.startsWith("/resources/blog/")) {
+    filePath = path.join(root, "resources/blog/article-slug.html");
+  }
   if (!filePath.startsWith(root) || filePath.includes(`${path.sep}.git${path.sep}`) || filePath.includes(`${path.sep}data${path.sep}`)) {
     res.writeHead(404);
     res.end("Not found");

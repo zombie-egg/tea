@@ -6,8 +6,11 @@ const workspace = document.querySelector("#admin-workspace");
 const loginForm = document.querySelector("#admin-login-form");
 const statusNode = document.querySelector("[data-admin-status]");
 const saveStatus = document.querySelector("[data-save-status]");
+const articleSaveStatus = document.querySelector("[data-article-save-status]");
 const siteForm = document.querySelector("#site-data-form");
+const articleForm = document.querySelector("#article-data-form");
 const productRoot = document.querySelector("[data-admin-products]");
+const articleRoot = document.querySelector("[data-admin-articles]");
 
 async function api(path, options = {}) {
   const token = localStorage.getItem(tokenKey);
@@ -56,6 +59,26 @@ function productEditor(product, index) {
   `;
 }
 
+function articleEditor(article = {}, index = 0) {
+  return `
+    <article class="plain-card admin-article" data-index="${index}">
+      <h3>${escapeHtml(article.title || "New Article")}</h3>
+      <div class="form-row">
+        <label>Slug<input name="slug" value="${escapeHtml(article.slug)}" placeholder="article-slug" /></label>
+        <label>Tags<input name="tag" value="${escapeHtml(article.tag)}" placeholder="tea rtd qa" /></label>
+      </div>
+      <div class="form-row">
+        <label>Title EN<input name="title" value="${escapeHtml(article.title)}" /></label>
+        <label>Title ZH<input name="titleZh" value="${escapeHtml(article.titleZh)}" /></label>
+      </div>
+      <label>Summary EN<textarea name="summary" rows="2">${escapeHtml(article.summary)}</textarea></label>
+      <label>Summary ZH<textarea name="summaryZh" rows="2">${escapeHtml(article.summaryZh)}</textarea></label>
+      <label>Body EN<textarea name="body" rows="4">${escapeHtml(article.body)}</textarea></label>
+      <label>Body ZH<textarea name="bodyZh" rows="4">${escapeHtml(article.bodyZh)}</textarea></label>
+    </article>
+  `;
+}
+
 function fillForm(data) {
   siteData = data.siteData;
   siteForm.address.value = siteData.contact.address || "";
@@ -63,6 +86,7 @@ function fillForm(data) {
   siteForm.phone.value = siteData.contact.phone || "";
   siteForm.whatsapp.value = siteData.contact.whatsapp || "";
   productRoot.innerHTML = siteData.products.map(productEditor).join("");
+  articleRoot.innerHTML = (siteData.articles || []).map(articleEditor).join("");
   renderSubmissions(data.submissions);
 }
 
@@ -83,6 +107,24 @@ function readForm() {
     },
     products
   };
+}
+
+function readArticles() {
+  return [...document.querySelectorAll(".admin-article")].map(card => {
+    const article = {};
+    card.querySelectorAll("input, textarea").forEach(field => {
+      article[field.name] = field.value.trim();
+    });
+    return article;
+  }).filter(article => article.slug && article.title);
+}
+
+async function saveSiteData(statusElement) {
+  await api("/api/admin/data", {
+    method: "PUT",
+    body: JSON.stringify({ siteData })
+  });
+  statusElement.textContent = "Saved.";
 }
 
 function renderSubmissions(store) {
@@ -127,14 +169,36 @@ siteForm.addEventListener("submit", async event => {
   saveStatus.textContent = "Saving...";
   try {
     siteData = readForm();
-    await api("/api/admin/data", {
-      method: "PUT",
-      body: JSON.stringify({ siteData })
-    });
-    saveStatus.textContent = "Saved.";
+    siteData.articles = readArticles();
+    await saveSiteData(saveStatus);
   } catch (error) {
     saveStatus.textContent = error.message;
   }
+});
+
+articleForm.addEventListener("submit", async event => {
+  event.preventDefault();
+  articleSaveStatus.textContent = "Saving...";
+  try {
+    siteData = readForm();
+    siteData.articles = readArticles();
+    await saveSiteData(articleSaveStatus);
+  } catch (error) {
+    articleSaveStatus.textContent = error.message;
+  }
+});
+
+document.querySelector("[data-add-article]").addEventListener("click", () => {
+  articleRoot.insertAdjacentHTML("beforeend", articleEditor({
+    slug: "new-article",
+    tag: "tea",
+    title: "New Article",
+    titleZh: "新文章",
+    summary: "Article summary.",
+    summaryZh: "文章摘要。",
+    body: "Article body.",
+    bodyZh: "文章正文。"
+  }, document.querySelectorAll(".admin-article").length));
 });
 
 document.querySelectorAll("[data-admin-tab]").forEach(button => {

@@ -5,6 +5,38 @@
     "phone": "+86 571 8888 0000",
     "whatsapp": "8657188880000"
   },
+  "articles": [
+    {
+      "slug": "choosing-rtd-tea-bases",
+      "title": "Choosing RTD Tea Bases",
+      "titleZh": "如何选择即饮茶基底",
+      "tag": "rtd tea",
+      "summary": "Key buying points for RTD tea base procurement.",
+      "summaryZh": "即饮茶基底采购的关键要点。",
+      "body": "Evaluate flavor stability, dilution ratio, process compatibility, packaging format and batch consistency before scaling an RTD tea project.",
+      "bodyZh": "在扩大即饮茶项目之前，需要评估风味稳定性、稀释比例、工艺兼容性、包装形式和批次一致性。"
+    },
+    {
+      "slug": "tea-extract-quality-checklist",
+      "title": "Tea Extract QA",
+      "titleZh": "茶萃取质量检查",
+      "tag": "qa tea",
+      "summary": "Quality checklist for tea extracts and powders.",
+      "summaryZh": "茶萃取液与粉末的质量检查清单。",
+      "body": "Procurement teams should review sensory profile, soluble solids, microbiology, heavy metals, pesticide residue and shelf-life documentation.",
+      "bodyZh": "采购团队应检查感官风味、可溶性固形物、微生物、重金属、农残和保质期文件。"
+    },
+    {
+      "slug": "commercial-tea-flavor-trends",
+      "title": "Tea Flavor Trends",
+      "titleZh": "茶饮风味趋势",
+      "tag": "tea",
+      "summary": "Market insights for commercial tea beverage development.",
+      "summaryZh": "商业茶饮开发的市场洞察。",
+      "body": "Modern tea beverage programs increasingly combine clean tea profiles, fruit notes, low-sugar formats and operationally simple preparation methods.",
+      "bodyZh": "现代茶饮项目越来越重视清晰茶感、果香风味、低糖配方和易操作的制备方式。"
+    }
+  ],
   "products": [
     {
       "id": "rtd",
