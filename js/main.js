@@ -7,8 +7,20 @@ const languageDictionary={
   "Products":"产品",
   "Solutions":"解决方案",
   "Quality":"质量保障",
+  "Quality Assurance":"质量保障",
+  "Manufacture":"制造能力",
   "Resources":"资源",
   "Contact":"联系我们",
+  "FAQs":"常见问题",
+  "Recruitment":"招聘",
+  "📁 Home":"📁 首页",
+  "📁 About":"📁 关于我们",
+  "📁 Products":"📁 产品",
+  "📁 Quality Assurance":"📁 质量保障",
+  "📁 Manufacture":"📁 制造能力",
+  "📁 FAQs":"📁 常见问题",
+  "📁 Contact":"📁 联系我们",
+  "📁 Recruitment":"📁 招聘",
   "📁 Brand Story":"📁 品牌故事",
   "📁 Factory & Capacity":"📁 工厂产能",
   "📁 Our Team":"📁 团队介绍",
@@ -313,6 +325,40 @@ function ensureWhatsAppFloat(){
   link.innerHTML="<span>WA</span>";
   document.body.appendChild(link);
 }
+const primaryNavItems=[
+  ["Home","index.html"],
+  ["About","about.html"],
+  ["Products","products.html"],
+  ["Quality Assurance","quality.html"],
+  ["Manufacture","solutions.html"],
+  ["FAQs","resources.html#faq"],
+  ["Contact","contact.html"],
+  ["Recruitment","about.html#team"]
+];
+function createMainNavigation(){
+  if(document.querySelector(".admin-page")||document.querySelector(".site-top-nav"))return;
+  const nav=document.createElement("nav");
+  nav.className="site-top-nav";
+  nav.setAttribute("aria-label","Primary navigation");
+  nav.innerHTML=primaryNavItems.map(([label,href])=>`<a href="${href}">${label}</a>`).join("");
+  document.body.prepend(nav);
+}
+function simplifyDrawerNavigation(){
+  const sideNav=document.querySelector(".side-nav");
+  if(!sideNav||sideNav.dataset.primaryOnly)return;
+  sideNav.dataset.primaryOnly="true";
+  sideNav.innerHTML=primaryNavItems.map(([label,href])=>`<a class="drawer-primary-link" href="${href}">📁 ${label}</a>`).join("");
+}
+function ensureBackTopButton(){
+  if(document.querySelector(".back-top-button")||document.querySelector(".admin-page"))return;
+  const button=document.createElement("button");
+  button.className="back-top-button";
+  button.type="button";
+  button.setAttribute("aria-label","Back to top");
+  button.innerHTML='↑';
+  button.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+  document.body.appendChild(button);
+}
 function localizedProduct(product, field){
   return currentLang()==="zh" && product[`${field}Zh`] ? product[`${field}Zh`] : product[field];
 }
@@ -474,11 +520,14 @@ function applyLanguage(lang){
   translateTextNodes(lang);
   translateAttributes(lang);
 }
+createMainNavigation();
+simplifyDrawerNavigation();
 const languageSwitch=createLanguageSwitch();
 const languageSelect=languageSwitch.querySelector("select");
 languageSelect.value=localStorage.getItem("siteLanguage")||"en";
 languageSelect.addEventListener("change",()=>applyLanguage(languageSelect.value));
 ensureWhatsAppFloat();
+ensureBackTopButton();
 applyLanguage(languageSelect.value);
 document.querySelector(".mobile-menu-btn")?.addEventListener("click",()=>body.classList.toggle("menu-open"));
 document.querySelector(".menu-backdrop")?.addEventListener("click",()=>body.classList.remove("menu-open"));

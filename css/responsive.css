@@ -1,4 +1,40 @@
 @media (max-width: 1100px) {
+	.site-top-nav {
+		display: none;
+	}
+
+	.mobile-menu-btn {
+		display: grid;
+	}
+
+	.page {
+		padding-top: 76px;
+	}
+
+	.sidebar .brand,
+	.sidebar .language-switch,
+	.sidebar .nav-group a {
+		display: none;
+	}
+
+	.sidebar .side-nav {
+		display: grid;
+		gap: 8px;
+		padding-top: 72px;
+	}
+
+	.sidebar .drawer-primary-link,
+	.sidebar .nav-group b {
+		display: block;
+		padding: 18px 20px;
+		border-bottom: 1px solid rgba(8, 45, 38, 0.14);
+		color: var(--tea-green-deep);
+		font-size: 22px;
+		font-weight: 900;
+		text-transform: none;
+		letter-spacing: 0;
+	}
+
 	.card-grid.three,
 	.stats-grid,
 	.cert-wall,
@@ -14,7 +50,7 @@
 @media (max-width: 820px) {
 	.mobile-menu-btn {
 		top: 14px;
-		left: 14px;
+		right: 14px;
 		width: 48px;
 		height: 48px;
 		font-size: 25px;
@@ -22,7 +58,8 @@
 
 	.standalone-language-switch {
 		top: 14px;
-		left: 72px;
+		left: 14px;
+		right: auto;
 		width: 132px;
 		padding: 8px;
 	}
@@ -37,7 +74,7 @@
 	}
 
 	.page {
-		padding: 0 14px 34px;
+		padding: 76px 14px 34px;
 	}
 
 	.home-button {
@@ -46,6 +83,13 @@
 		width: 58px;
 		height: 58px;
 		padding: 0;
+	}
+
+	.back-top-button {
+		right: 18px;
+		bottom: 158px;
+		width: 58px;
+		height: 58px;
 	}
 
 	.hero {
