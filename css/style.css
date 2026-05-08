@@ -26,13 +26,21 @@ html {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   margin: 0;
   color: var(--ink);
   font: 16px/1.7 "Noto Sans SC", "Source Han Sans SC", Arial, sans-serif;
-  background:
+  background-color: #eee7d7;
+  background-image:
+    url("../images/paper-wrinkle.svg"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170' height='170'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.45' numOctaves='5' seed='31'/%3E%3CfeColorMatrix type='matrix' values='.48 0 0 0 .32 0 .46 0 0 .28 0 0 .42 0 .2 0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='170' height='170' fill='%23efe7d8'/%3E%3Crect width='170' height='170' filter='url(%23g)' opacity='.95'/%3E%3C/svg%3E"),
     radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.82), transparent 42%),
-    radial-gradient(circle at 80% 22%, rgba(210, 196, 168, 0.18), transparent 40%),
-    linear-gradient(180deg, #fbfaf6, var(--paper) 52%, var(--paper-warm));
+    radial-gradient(circle at 80% 22%, rgba(210, 196, 168, 0.3), transparent 40%),
+    linear-gradient(180deg, #f7f3ea, var(--paper) 52%, var(--paper-warm));
+  background-size: cover, 170px 170px, auto, auto, auto;
+  background-position: center top, 0 0, center, center, center;
+  background-blend-mode: multiply, multiply, screen, multiply, normal;
   background-attachment: fixed;
 }
 
@@ -40,21 +48,22 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
   pointer-events: none;
   background-image:
     url("../images/paper-wrinkle.svg"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' seed='8'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .06 0'/%3E%3C/filter%3E%3Crect width='240' height='240' fill='%23f4efe3'/%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.85'/%3E%3C/svg%3E");
-  background-size: cover, 240px 240px;
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.6' numOctaves='3' seed='18'/%3E%3CfeColorMatrix type='matrix' values='.7 0 0 0 .18 0 .65 0 0 .15 0 0 .58 0 .1 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='96' height='96' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+  background-size: cover, 96px 96px;
   background-position: center top, 0 0;
-  opacity: 0.72;
+  mix-blend-mode: multiply;
+  opacity: 0.44;
 }
 
 body::after {
   content: "";
   position: fixed;
   inset: -8% -4%;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   background:
     linear-gradient(98deg, transparent 0 20%, rgba(255, 255, 255, 0.22) 20.5%, transparent 23% 52%, rgba(104, 81, 53, 0.045) 52.6%, transparent 56% 100%),
@@ -62,7 +71,12 @@ body::after {
     radial-gradient(ellipse at 22% 26%, rgba(255, 255, 255, 0.5), transparent 34%),
     radial-gradient(ellipse at 74% 76%, rgba(104, 81, 53, 0.1), transparent 42%);
   mix-blend-mode: multiply;
-  opacity: 0.52;
+  opacity: 0.68;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 a {
@@ -429,7 +443,10 @@ p {
   border: 1px solid rgba(95, 131, 115, 0.2);
   border-radius: 0;
   background:
-    linear-gradient(180deg, rgba(255, 254, 250, 0.76), rgba(250, 246, 238, 0.64));
+    url("../images/paper-wrinkle.svg") center/cover,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='130' height='130'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.9' numOctaves='4' seed='42'/%3E%3CfeColorMatrix type='matrix' values='.55 0 0 0 .26 0 .52 0 0 .22 0 0 .45 0 .15 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='130' height='130' filter='url(%23g)' opacity='.95'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, rgba(255, 254, 250, 0.68), rgba(246, 239, 225, 0.56));
+  background-blend-mode: multiply, multiply, normal;
   box-shadow: none;
   scroll-margin-top: 88px;
 }
@@ -473,7 +490,10 @@ p {
   overflow: hidden;
   border: 1px solid rgba(95, 131, 115, 0.22);
   border-radius: 0;
-  background: rgba(255, 253, 248, 0.62);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='110'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.7' numOctaves='3' seed='12'/%3E%3CfeColorMatrix type='matrix' values='.6 0 0 0 .24 0 .56 0 0 .2 0 0 .5 0 .12 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='110' height='110' filter='url(%23g)' opacity='.85'/%3E%3C/svg%3E"),
+    rgba(255, 253, 248, 0.58);
+  background-blend-mode: multiply, normal;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
@@ -517,7 +537,9 @@ p {
   border: 1px solid rgba(95, 131, 115, 0.18);
   border-radius: 0;
   background:
-    linear-gradient(170deg, rgba(255, 253, 247, 0.95), rgba(245, 235, 216, 0.7));
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='110'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.7' numOctaves='3' seed='52'/%3E%3CfeColorMatrix type='matrix' values='.6 0 0 0 .24 0 .56 0 0 .2 0 0 .5 0 .12 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='110' height='110' filter='url(%23g)' opacity='.85'/%3E%3C/svg%3E"),
+    linear-gradient(170deg, rgba(255, 253, 247, 0.9), rgba(241, 231, 210, 0.66));
+  background-blend-mode: multiply, normal;
 }
 
 .stats-grid strong {
@@ -616,9 +638,11 @@ p {
   border: 1px solid rgba(95, 131, 115, 0.24);
   border-radius: 0;
   background:
+    url("../images/paper-wrinkle.svg") center/cover,
     radial-gradient(circle at 16% 20%, rgba(196, 164, 106, 0.2), transparent 30%),
     radial-gradient(circle at 84% 56%, rgba(95, 117, 88, 0.12), transparent 34%),
-    rgba(255, 252, 245, 0.75);
+    rgba(255, 252, 245, 0.68);
+  background-blend-mode: multiply, normal, normal, normal;
 }
 
 .tea-decoration a {
@@ -679,7 +703,10 @@ p {
   overflow: hidden;
   border: 1px solid rgba(95, 131, 115, 0.24);
   border-radius: 0;
-  background: rgba(255, 252, 245, 0.82);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='110'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.7' numOctaves='3' seed='62'/%3E%3CfeColorMatrix type='matrix' values='.6 0 0 0 .24 0 .56 0 0 .2 0 0 .5 0 .12 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='110' height='110' filter='url(%23g)' opacity='.85'/%3E%3C/svg%3E"),
+    rgba(255, 252, 245, 0.74);
+  background-blend-mode: multiply, normal;
 }
 
 .accordion-trigger {
