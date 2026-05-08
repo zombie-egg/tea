@@ -383,9 +383,25 @@ function applyProductDetail(products){
   if(text)text.textContent=localizedProduct(product,"detail");
   document.title=`${localizedProduct(product,"title")} | TeaSourcex`;
 }
+function applyMediaData(media){
+  if(!media)return;
+  const video=document.querySelector(".hero-video");
+  if(video){
+    const source=video.querySelector("source");
+    if(media.heroPoster){
+      video.poster=media.heroPoster;
+      video.closest(".hero")?.style.setProperty("background-image", `url("${media.heroPoster}")`);
+    }
+    if(source && media.heroVideo && source.src!==media.heroVideo){
+      source.src=media.heroVideo;
+      video.load();
+    }
+  }
+}
 function applySiteData(){
   if(!currentSiteData)return;
   applyContactData(currentSiteData.contact);
+  applyMediaData(currentSiteData.media);
   applyProductSelects(currentSiteData.products||[]);
   renderProducts(currentSiteData.products||[]);
   applyProductDetail(currentSiteData.products||[]);
@@ -406,10 +422,9 @@ async function loadSiteData(){
 }
 function createLanguageSwitch(){
   const switcher=document.createElement("label");
-  switcher.className="language-switch";
+  switcher.className="language-switch standalone-language-switch";
   switcher.innerHTML='<span data-lang-label>Language</span><select aria-label="Language"><option value="en">English</option><option value="zh">Chinese</option></select>';
-  const brand=document.querySelector(".brand");
-  if(brand){brand.insertAdjacentElement("beforebegin",switcher)}else{switcher.classList.add("standalone-language-switch");document.body.prepend(switcher)}
+  document.body.prepend(switcher);
   return switcher;
 }
 const originalTextNodes=new WeakMap();

@@ -36,12 +36,12 @@ ADMIN_PASSWORD="your-strong-password" npm start
 
 ## Backend Features
 
-- `GET /api/site-data` returns editable contact and product data.
+- `GET /api/site-data` returns editable contact, homepage media and product data.
 - `POST /api/inquiries` stores inquiry form submissions.
 - `POST /api/sample-requests` stores sample request submissions.
 - `POST /api/admin/login` logs into the admin panel.
 - `GET /api/admin/data` reads editable content and submissions.
-- `PUT /api/admin/data` saves contact and product content.
+- `PUT /api/admin/data` saves contact, homepage media, product and article content.
 
 Data files:
 
@@ -70,6 +70,8 @@ The admin panel has three areas:
 - `Articles`: add or edit blog articles, tags, summaries and article body.
 - `Submissions`: view inquiry form submissions and sample request submissions.
 
+The admin panel has its own English / Chinese language selector at the top.
+
 When visitors submit the inquiry or sample form, the records are saved in the backend and appear in `Admin > Submissions`.
 
 ## Acceptance Checklist
@@ -88,6 +90,7 @@ When visitors submit the inquiry or sample form, the records are saved in the ba
 The admin panel can edit:
 
 - Company address, email, phone, WhatsApp number
+- Homepage hero video URL and hero image URL
 - Product title, Chinese title, category filter, image URL
 - Product English/Chinese summaries
 - Product English/Chinese details

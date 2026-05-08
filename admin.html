@@ -11,6 +11,13 @@
   <body>
     <main class="page admin-page" style="margin-left: 0">
       <section class="panel">
+        <label class="admin-language-switch">
+          <span>Admin Language</span>
+          <select id="admin-language" aria-label="Admin language">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+          </select>
+        </label>
         <p class="eyebrow">Admin</p>
         <h1>TeaSourcex Content Admin</h1>
         <p class="note">Client entry: /admin.html. Use Content to edit site data, Articles to add posts, and Submissions to view visitor contact messages.</p>
@@ -42,6 +49,11 @@
             <div class="form-row">
               <label>Phone<input name="phone" /></label>
               <label>WhatsApp Number<input name="whatsapp" /></label>
+            </div>
+            <h2>Homepage Media</h2>
+            <div class="form-row">
+              <label>Hero Video URL<input name="heroVideo" /></label>
+              <label>Hero Image URL<input name="heroPoster" /></label>
             </div>
             <h2>Products</h2>
             <div class="admin-products" data-admin-products></div>
