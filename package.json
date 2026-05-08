@@ -1,0 +1,12 @@
+{
+  "name": "teasourcex-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TeaSourcex B2B website with lightweight editable backend.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

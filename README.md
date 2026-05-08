@@ -1,14 +1,75 @@
 # TeaSourcex B2B Tea Website
 
-Static multi-page website template for an English B2B tea ingredients supplier.
+TeaSourcex is now a static frontend plus a lightweight Node backend. The frontend design stays the same, while products, contact information, and form submissions are backed by real server-side JSON data.
 
 ## Local Run
 
-Open `index.html` directly in a browser, or use VS Code Live Server:
+Use the backend server for real data and form submission:
 
-1. Open this folder in VS Code.
-2. Right-click `index.html`.
-3. Choose `Open with Live Server`.
+```bash
+npm start
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+Admin:
+
+```text
+http://localhost:3000/admin.html
+```
+
+Default local password:
+
+```text
+change-this-password
+```
+
+Set a real production password before deployment:
+
+```bash
+ADMIN_PASSWORD="your-strong-password" npm start
+```
+
+## Backend Features
+
+- `GET /api/site-data` returns editable contact and product data.
+- `POST /api/inquiries` stores inquiry form submissions.
+- `POST /api/sample-requests` stores sample request submissions.
+- `POST /api/admin/login` logs into the admin panel.
+- `GET /api/admin/data` reads editable content and submissions.
+- `PUT /api/admin/data` saves contact and product content.
+
+Data files:
+
+```text
+data/site-data.json
+data/submissions.json
+```
+
+## Admin Editing
+
+The admin panel can edit:
+
+- Company address, email, phone, WhatsApp number
+- Product title, Chinese title, category filter, image URL
+- Product English/Chinese summaries
+- Product English/Chinese details
+- Inquiry and sample request submissions
+
+## Deployment Notes
+
+For Zeabur, deploy this as a Node service:
+
+- Build command: leave empty or `npm install`
+- Start command: `npm start`
+- Environment variable: `ADMIN_PASSWORD`
+- Optional environment variable: `ADMIN_SECRET`
+
+Important: JSON persistence requires a writable deployment filesystem or persistent volume. For high reliability, replace JSON storage with Zeabur PostgreSQL later.
 
 ## Pages
 
@@ -21,58 +82,11 @@ Open `index.html` directly in a browser, or use VS Code Live Server:
 - `contact.html`
 - `thank-you-inquiry.html`
 - `thank-you-sample.html`
+- `admin.html`
 - Detail pages under `about/`, `products/`, `solutions/`, `quality/`, `resources/`, `contact/`
-- Blog demo URL: `resources/blog/article-slug.html`
 
-## Implemented Frontend Features
+## Notes
 
-- Fixed left sidebar navigation with folder icons
-- Paper / frosted beige texture background
-- Warm brown, orange-brown and gold color system
-- Responsive layout for desktop, tablet and mobile 375px+
-- Mobile hamburger navigation
-- Fixed Home button
-- Fixed WhatsApp floating button
-- Hero video placeholder with mobile image fallback
-- Fade-in-on-scroll animation
-- CountUp-style number animation
-- Horizontal brand timeline, vertical on mobile
-- Product filter component
-- Solutions tab component
-- Certificate lightbox component
-- Blog tag filter and search
-- SOP accordion with download buttons
-- Inquiry form and sample request form
-- Separate noindex thank-you pages
-
-## Static Site Limitations
-
-This project is pure HTML/CSS/JavaScript and has no backend. The following production requirements need server/CMS integration before launch:
-
-- Real website backend login account and password
-- Admin article publishing system
-- Server-side form notification
-- CRM or email delivery logs
-- WordPress, Webflow CMS, Strapi, Sanity or another CMS for blog management
-
-The current forms use a `mailto:` simulation and redirect to thank-you pages. To make forms production-ready, replace the form handling in `js/main.js` with Formspree, Netlify Forms, a CRM endpoint or a custom backend API.
-
-## Content Notes
-
-- All placeholder content is marked as ``.
-- Background image is intentionally empty in `css/style.css`:
-
-```css
-background-image: url("");
-```
-
-Replace it when the client provides a real background image.
-
-- Placeholder images use `https://via.placeholder.com/`.
-- Replace `https://wa.me/8600000000000` with the real WhatsApp number in international format.
-
-## Deployment
-
-Upload all files to a static hosting server such as Nginx, Apache, Netlify, Vercel, Cloudflare Pages or the client server public web directory.
-
-For CMS/admin requirements, deploy this frontend as a theme or static frontend connected to the selected CMS/backend.
+- The website still supports English and Chinese switching.
+- Product and contact data now comes from backend data when running via `npm start`.
+- Directly opening `index.html` still shows the frontend, but real forms and editable data require the Node server.

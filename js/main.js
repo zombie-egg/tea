@@ -131,7 +131,7 @@ const languageDictionary={
   "Articles, downloads and operating guides.":"文章、下载资料与操作指南。",
   "Blog Search and Tags":"博客搜索与标签",
   "Blog / Tea Knowledge":"博客/茶知识",
-  "Static blog demo. Future CMS: WordPress, Webflow CMS or headless CMS.":"静态博客演示，后续可接入 WordPress、Webflow CMS 或 Headless CMS。",
+  "CMS-ready article area for tea knowledge and technical updates.":"用于茶知识与技术更新的文章区域，可接入 CMS。",
   "Choosing RTD Tea Bases":"如何选择即饮茶基底",
   "Key buying points.":"关键采购要点。",
   "Tea Extract QA":"茶萃取质量检查",
@@ -150,7 +150,7 @@ const languageDictionary={
   "Download PDF":"下载PDF",
   "MOQ, lead time, samples, certifications and shipping.":"最小起订量、交期、样品、认证与运输。",
   "Start your tea project":"开始你的茶饮项目",
-  "Demo form: replace with Formspree, CRM or backend API before launch.":"演示表单：上线前请替换为 Formspree、CRM 或后端接口。",
+  "Your request is saved to the TeaSourcex backend for follow-up.":"你的需求会保存到 TeaSourcex 后台，便于后续跟进。",
   "Inquiry Form":"询价表单",
   "Company Name":"公司名称",
   "Contact Person":"联系人",
@@ -214,7 +214,7 @@ Object.assign(languageDictionary,{
   "From sourcing to delivery, teams collaborate to support formula, quality and lead-time goals.":"从采购到交付，团队协同支持配方、质量与交期目标。",
   "Home Visual":"首页视觉",
   "How to evaluate tea ingredients before scaling an order.":"如何在扩大订单前评估茶饮原料。",
-  "Independent article URL demo: /resources/blog/article-slug.":"独立文章 URL 示例：/resources/blog/article-slug。",
+  "Independent article URL: /resources/blog/article-slug.":"独立文章 URL：/resources/blog/article-slug。",
   "Industrial solution detail page.":"工业化解决方案详情页。",
   "Initial cooperation with regional tea growers built the first stable sourcing network.":"与区域茶农的早期合作建立了稳定采购网络。",
   "Inquiry form for pricing and project details, sample request form for product verification.":"询价表单用于价格与项目详情，样品表单用于产品验证。",
@@ -291,6 +291,80 @@ const placeholderDictionary={
   "Sample requirements.":"请填写样品需求。",
   "Search articles...":"搜索文章..."
 };
+let currentSiteData=null;
+function escapeHtml(value){
+  return String(value ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;");
+}
+function currentLang(){
+  return localStorage.getItem("siteLanguage")||"en";
+}
+function localizedProduct(product, field){
+  return currentLang()==="zh" && product[`${field}Zh`] ? product[`${field}Zh`] : product[field];
+}
+function applyContactData(contact){
+  if(!contact)return;
+  document.querySelectorAll("[data-contact-address]").forEach(node=>node.textContent=contact.address||"");
+  document.querySelectorAll("[data-contact-email]").forEach(node=>node.textContent=contact.email||"");
+  document.querySelectorAll("[data-contact-phone]").forEach(node=>node.textContent=contact.phone||"");
+  const whatsappHref=contact.whatsapp?`https://wa.me/${String(contact.whatsapp).replace(/\D/g,"")}`:"https://wa.me/8600000000000";
+  document.querySelectorAll("[data-whatsapp-link], .whatsapp-float").forEach(link=>link.href=whatsappHref);
+}
+function applyProductSelects(products){
+  document.querySelectorAll("[data-product-select]").forEach(select=>{
+    const selected=select.value;
+    select.innerHTML=products.map(product=>`<option value="${escapeHtml(product.title)}">${escapeHtml(localizedProduct(product,"title"))}</option>`).join("");
+    if(selected)select.value=selected;
+  });
+}
+function renderProducts(products){
+  const grid=document.querySelector("[data-product-grid]");
+  if(!grid)return;
+  grid.innerHTML=products.map(product=>`
+    <article class="product-card" id="${escapeHtml(product.id)}" data-filter="${escapeHtml(product.filter)}">
+      <img src="${escapeHtml(product.image)}" alt="${escapeHtml(localizedProduct(product,"title"))}" />
+      <div>
+        <h3>${escapeHtml(localizedProduct(product,"title"))}</h3>
+        <p>${escapeHtml(localizedProduct(product,"summary"))}</p>
+        <a href="products/${escapeHtml(product.slug)}.html">Details</a>
+      </div>
+    </article>
+  `).join("");
+  if(typeof filterCards==="function")filterCards(".product-grid",".filter-bar [data-filter]",".product-card");
+}
+function applyProductDetail(products){
+  const slug=location.pathname.split("/").pop()?.replace(".html","");
+  const product=products.find(item=>item.slug===slug);
+  if(!product)return;
+  const panel=document.querySelector(".panel");
+  const title=panel?.querySelector("h1");
+  const text=panel?.querySelector("p:not(.eyebrow)");
+  if(title)title.textContent=localizedProduct(product,"title");
+  if(text)text.textContent=localizedProduct(product,"detail");
+  document.title=`${localizedProduct(product,"title")} | TeaSourcex`;
+}
+function applySiteData(){
+  if(!currentSiteData)return;
+  applyContactData(currentSiteData.contact);
+  applyProductSelects(currentSiteData.products||[]);
+  renderProducts(currentSiteData.products||[]);
+  applyProductDetail(currentSiteData.products||[]);
+}
+async function loadSiteData(){
+  if(location.protocol==="file:")return;
+  try{
+    const response=await fetch("/api/site-data");
+    if(!response.ok)return;
+    currentSiteData=await response.json();
+    applySiteData();
+    applyLanguage(currentLang());
+  }catch(error){
+    console.warn("Site data unavailable",error);
+  }
+}
 function createLanguageSwitch(){
   const switcher=document.createElement("label");
   switcher.className="language-switch";
@@ -324,9 +398,10 @@ function applyLanguage(lang){
   document.documentElement.lang=lang==="zh"?"zh-CN":"en";
   if(!document.documentElement.dataset.originalTitle)document.documentElement.dataset.originalTitle=document.title;
   document.title=lang==="zh"?(languageDictionary[document.documentElement.dataset.originalTitle]||document.documentElement.dataset.originalTitle):document.documentElement.dataset.originalTitle;
+  localStorage.setItem("siteLanguage",lang);
+  applySiteData();
   translateTextNodes(lang);
   translateAttributes(lang);
-  localStorage.setItem("siteLanguage",lang);
 }
 const languageSwitch=createLanguageSwitch();
 const languageSelect=languageSwitch.querySelector("select");
@@ -358,4 +433,5 @@ document.querySelectorAll(".accordion-trigger").forEach(btn=>btn.addEventListene
 const searchInput=document.querySelector("[data-blog-search]");
 if(searchInput){searchInput.addEventListener("input",()=>{const q=searchInput.value.toLowerCase();document.querySelectorAll(".blog-card").forEach(card=>{card.classList.toggle("hide",!card.textContent.toLowerCase().includes(q))})})}
 
-document.querySelectorAll("form[data-redirect]").forEach(form=>{form.addEventListener("submit",event=>{event.preventDefault();const redirect=form.dataset.redirect;const formData=new FormData(form);const mailto=form.dataset.mailto;if(mailto){const subject=encodeURIComponent(form.dataset.subject||"Website Form Submission");const bodyText=encodeURIComponent([...formData.entries()].map(([k,v])=>`${k}: ${v}`).join("\n"));window.location.href=`mailto:${mailto}?subject=${subject}&body=${bodyText}`;setTimeout(()=>{window.location.href=redirect},600)}else{window.location.href=redirect}})});
+document.querySelectorAll("form[data-redirect]").forEach(form=>{form.addEventListener("submit",async event=>{event.preventDefault();const redirect=form.dataset.redirect;const formData=new FormData(form);const payload=Object.fromEntries(formData.entries());if(form.dataset.api){const button=form.querySelector("button[type='submit']");const oldText=button?.textContent;if(button){button.disabled=true;button.textContent=currentLang()==="zh"?"提交中...":"Submitting..."}try{const response=await fetch(form.dataset.api,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});const data=await response.json().catch(()=>({}));if(!response.ok)throw new Error(data.error||"Submission failed");window.location.href=data.redirect||redirect}catch(error){alert(currentLang()==="zh"?`提交失败：${error.message}`:`Submission failed: ${error.message}`);if(button){button.disabled=false;button.textContent=oldText}}return}window.location.href=redirect})});
+loadSiteData();

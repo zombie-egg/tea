@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>TeaSourcex Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <main class="page admin-page" style="margin-left: 0">
+      <section class="panel">
+        <p class="eyebrow">Admin</p>
+        <h1>TeaSourcex Content Admin</h1>
+        <p class="note">Use the server password to edit contact data, product data, and view real form submissions.</p>
+      </section>
+
+      <section class="panel" id="admin-login">
+        <form class="form-grid" id="admin-login-form">
+          <h2>Login</h2>
+          <label>Admin Password<input type="password" name="password" required autocomplete="current-password" /></label>
+          <button class="btn primary" type="submit">Login</button>
+          <p class="note" data-admin-status></p>
+        </form>
+      </section>
+
+      <section class="panel admin-workspace" id="admin-workspace" hidden>
+        <div class="tabs">
+          <button class="active" type="button" data-admin-tab="content">Content</button>
+          <button type="button" data-admin-tab="submissions">Submissions</button>
+        </div>
+
+        <div data-admin-panel="content">
+          <form class="form-grid" id="site-data-form">
+            <h2>Contact Info</h2>
+            <div class="form-row">
+              <label>Address<input name="address" /></label>
+              <label>Email<input name="email" type="email" /></label>
+            </div>
+            <div class="form-row">
+              <label>Phone<input name="phone" /></label>
+              <label>WhatsApp Number<input name="whatsapp" /></label>
+            </div>
+            <h2>Products</h2>
+            <div class="admin-products" data-admin-products></div>
+            <button class="btn primary" type="submit">Save Content</button>
+            <p class="note" data-save-status></p>
+          </form>
+        </div>
+
+        <div data-admin-panel="submissions" hidden>
+          <h2>Inquiry Submissions</h2>
+          <div class="admin-table" data-inquiries></div>
+          <h2>Sample Requests</h2>
+          <div class="admin-table" data-samples></div>
+        </div>
+      </section>
+    </main>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

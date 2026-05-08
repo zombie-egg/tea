@@ -1,0 +1,58 @@
+{
+  "contact": {
+    "address": "No. 88 Tea Industry Road, Hangzhou, China",
+    "email": "sales@teasourcex.com",
+    "phone": "+86 571 8888 0000",
+    "whatsapp": "8657188880000"
+  },
+  "products": [
+    {
+      "id": "rtd",
+      "slug": "rtd-tea-bases",
+      "filter": "rtd beverage",
+      "title": "RTD Tea Bases",
+      "titleZh": "即饮茶基底",
+      "summary": "Ready-to-use tea bases for bottled tea and beverage production.",
+      "summaryZh": "适用于瓶装茶和饮料生产的即用型茶基底。",
+      "image": "https://via.placeholder.com/720x480/F0D9B5/8B4513?text=RTD+Tea+Bases",
+      "detail": "Stable tea base formats for scalable beverage manufacturing, including black tea, green tea, oolong tea and custom blends.",
+      "detailZh": "面向规模化饮料生产的稳定茶基底，覆盖红茶、绿茶、乌龙茶和定制拼配方案。"
+    },
+    {
+      "id": "extracts",
+      "slug": "tea-extracts-powders",
+      "filter": "extract beverage",
+      "title": "Tea Extracts & Powders",
+      "titleZh": "茶萃取液与粉末",
+      "summary": "Concentrated tea extracts and powders for formula development.",
+      "summaryZh": "用于配方开发的浓缩茶萃取液与粉末。",
+      "image": "https://via.placeholder.com/720x480/E7C79C/8B4513?text=Tea+Extracts",
+      "detail": "Concentrated liquid and powder ingredients designed for flavor consistency, process compatibility and convenient logistics.",
+      "detailZh": "浓缩液体与粉末原料，兼顾风味稳定、工艺兼容和物流便利。"
+    },
+    {
+      "id": "ingredients",
+      "slug": "tea-ingredients",
+      "filter": "ingredient",
+      "title": "Tea Ingredients",
+      "titleZh": "茶叶原料",
+      "summary": "Loose tea, blends and supporting ingredients for commercial tea menus.",
+      "summaryZh": "适用于商业茶饮菜单的原叶茶、拼配茶和配套原料。",
+      "image": "https://via.placeholder.com/720x480/DDB57D/8B4513?text=Tea+Ingredients",
+      "detail": "Selected tea leaves and blends for F&B chains, drink brands and OEM production programs.",
+      "detailZh": "为餐饮连锁、饮品品牌和 OEM 生产项目提供精选茶叶与拼配方案。"
+    },
+    {
+      "id": "oem",
+      "slug": "oem-odm-service",
+      "filter": "oem",
+      "title": "OEM/ODM Service",
+      "titleZh": "OEM/ODM 服务",
+      "summary": "Custom product development from formula to production handoff.",
+      "summaryZh": "从配方开发到量产交付的定制服务。",
+      "image": "https://via.placeholder.com/720x480/EBD6B8/8B4513?text=OEM+ODM",
+      "detail": "Formula design, sampling, pilot review, packaging coordination and production support for private-label tea beverage projects.",
+      "detailZh": "为自有品牌茶饮项目提供配方设计、打样、小试评估、包装协同和生产支持。"
+    }
+  ]
+}
