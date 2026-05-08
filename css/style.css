@@ -987,3 +987,11 @@ textarea:focus {
   line-height: 1.8;
   font-size: 0.95rem;
 }
+
+html[lang="en"] .lang-zh {
+  display: none;
+}
+
+html[lang="zh-CN"] .lang-en {
+  display: none;
+}
