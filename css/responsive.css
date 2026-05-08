@@ -43,8 +43,7 @@
 	}
 
 	.product-carousel {
-		grid-auto-columns: minmax(300px, 78vw);
-		grid-template-columns: none;
+		display: flex;
 	}
 
 	.contact-layout {
@@ -130,10 +129,13 @@
 	}
 
 	.product-carousel {
-		grid-auto-flow: column;
-		grid-auto-columns: minmax(286px, 86vw);
-		grid-template-columns: none;
+		display: flex;
 		overflow-x: auto;
+	}
+
+	.product-carousel .product-card {
+		flex-basis: min(86vw, 340px);
+		min-height: 500px;
 	}
 
 	.timeline-scroll {

@@ -542,30 +542,6 @@ document.querySelectorAll(".countup-zone").forEach(zone=>countObserver.observe(z
 }
 
 document.querySelectorAll(".timeline-card").forEach(card=>card.addEventListener("click",()=>card.classList.toggle("open")));
-document.querySelectorAll(".timeline-scroll").forEach(track=>{
-  const cards=[...track.querySelectorAll(".timeline-card")];
-  if(cards.length<2)return;
-  let index=Math.max(0,cards.findIndex(card=>card.classList.contains("open")));
-  const activate=()=>{
-    cards.forEach(card=>card.classList.remove("is-active"));
-    const card=cards[index%cards.length];
-    card.classList.add("is-active");
-    card.scrollIntoView({behavior:"smooth",inline:"center",block:"nearest"});
-    index+=1;
-  };
-  activate();
-  setInterval(activate,3200);
-});
-document.querySelectorAll(".product-carousel").forEach(track=>{
-  const cards=[...track.querySelectorAll(".product-card")];
-  if(cards.length<2)return;
-  let index=0;
-  setInterval(()=>{
-    const card=cards[index%cards.length];
-    card.scrollIntoView({behavior:"smooth",inline:"center",block:"nearest"});
-    index+=1;
-  },3600);
-});
 if(typeof filterCards==="function"){
 filterCards(".product-grid",".filter-bar [data-filter]",".product-card");
 filterCards(".blog-list",".tag-filter [data-filter]",".blog-card");
