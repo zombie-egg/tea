@@ -728,6 +728,30 @@ p {
   display: block;
 }
 
+.article-detail [data-article-body] {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.article-list {
+  margin: 0 0 12px;
+  padding-left: 22px;
+  color: var(--muted);
+}
+
+.article-sources {
+  margin: 24px 0;
+  padding: 18px;
+  border: 1px solid rgba(95, 131, 115, 0.22);
+  background:
+    url("../images/paper-grain.svg") center/520px 780px,
+    rgba(255, 253, 248, 0.58);
+  background-blend-mode: multiply, normal;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .blog-tools {
   display: grid;
   grid-template-columns: 1fr auto;

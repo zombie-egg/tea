@@ -349,6 +349,21 @@ function renderProducts(products){
 function localizedArticle(article, field){
   return currentLang()==="zh" && article[`${field}Zh`] ? article[`${field}Zh`] : article[field];
 }
+function formatArticleText(text){
+  const linkify=value=>value.replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>');
+  return escapeHtml(text || "")
+    .split(/\n{2,}/)
+    .filter(Boolean)
+    .map(block=>{
+      const trimmed=block.trim();
+      if(trimmed.startsWith("- ")){
+        const items=trimmed.split("\n").map(line=>line.replace(/^- /,"").trim()).filter(Boolean);
+        return `<ul class="article-list">${items.map(item=>`<li>${linkify(item)}</li>`).join("")}</ul>`;
+      }
+      return `<p>${linkify(trimmed.replaceAll("\n","<br>"))}</p>`;
+    })
+    .join("");
+}
 function renderArticles(articles){
   const list=document.querySelector("[data-article-list]");
   if(!list)return;
@@ -369,7 +384,9 @@ function renderArticleDetail(articles){
   if(!article)return;
   detail.querySelector("h1").textContent=localizedArticle(article,"title");
   detail.querySelector("[data-article-summary]").textContent=localizedArticle(article,"summary");
-  detail.querySelector("[data-article-body]").textContent=localizedArticle(article,"body");
+  detail.querySelector("[data-article-body]").innerHTML=formatArticleText(localizedArticle(article,"body"));
+  const sourceNode=detail.querySelector("[data-article-sources]");
+  if(sourceNode)sourceNode.innerHTML=formatArticleText(article.sources || "");
   document.title=`${localizedArticle(article,"title")} | TeaSourcex Blog`;
 }
 function applyProductDetail(products){

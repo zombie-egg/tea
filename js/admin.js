@@ -61,6 +61,7 @@ const zh = {
   "Tags": "标签",
   "Body EN": "英文正文",
   "Body ZH": "中文正文",
+  "Source URLs": "来源链接",
   "Article summary.": "文章摘要。",
   "Article body.": "文章正文。",
   "article-slug": "article-slug",
@@ -160,6 +161,7 @@ function articleEditor(article = {}, index = 0) {
       <label>${t("Summary ZH")}<textarea name="summaryZh" rows="2">${escapeHtml(article.summaryZh)}</textarea></label>
       <label>${t("Body EN")}<textarea name="body" rows="4">${escapeHtml(article.body)}</textarea></label>
       <label>${t("Body ZH")}<textarea name="bodyZh" rows="4">${escapeHtml(article.bodyZh)}</textarea></label>
+      <label>${t("Source URLs")}<textarea name="sources" rows="2">${escapeHtml(article.sources)}</textarea></label>
     </article>
   `;
 }
@@ -294,7 +296,8 @@ document.querySelector("[data-add-article]").addEventListener("click", () => {
     summary: t("Article summary."),
     summaryZh: "文章摘要。",
     body: t("Article body."),
-    bodyZh: "文章正文。"
+    bodyZh: "文章正文。",
+    sources: ""
   }, document.querySelectorAll(".admin-article").length));
   translateStaticAdmin();
 });

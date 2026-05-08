@@ -11,34 +11,81 @@
   },
   "articles": [
     {
-      "slug": "choosing-rtd-tea-bases",
-      "title": "Choosing RTD Tea Bases",
-      "titleZh": "如何选择即饮茶基底",
-      "tag": "rtd tea",
-      "summary": "Key buying points for RTD tea base procurement.",
-      "summaryZh": "即饮茶基底采购的关键要点。",
-      "body": "Evaluate flavor stability, dilution ratio, process compatibility, packaging format and batch consistency before scaling an RTD tea project.",
-      "bodyZh": "在扩大即饮茶项目之前，需要评估风味稳定性、稀释比例、工艺兼容性、包装形式和批次一致性。"
+      "slug": "tea-types-for-commercial-formulation",
+      "title": "Tea Types for Commercial Beverage Formulation",
+      "titleZh": "商业茶饮配方中的茶类选择",
+      "tag": "tea formulation",
+      "summary": "How black, green, oolong, white and dark tea differ in oxidation, flavor and application.",
+      "summaryZh": "说明红茶、绿茶、乌龙茶、白茶和黑茶在氧化程度、风味与应用上的差异。",
+      "body": "Commercial tea formulation starts with tea type, not only flavor naming. Black, green, oolong, white and dark teas all come from Camellia sinensis, but processing creates very different sensory profiles. Black tea is fully oxidized, giving stronger color and rounded body. Oolong sits between green and black tea, often useful when a brand needs aroma complexity without heavy astringency. Green and white teas are not oxidized after harvest, so they are commonly selected for clean, fresh and lighter beverage concepts. Dark teas may involve microbial fermentation after manufacture.\n\nFor B2B buyers, the practical decision is application fit. RTD bottled tea often needs color stability, low sediment and heat-process tolerance. F&B chains often care more about aroma release, dilution performance and repeatable preparation. OEM projects should define target cup profile, sweetness level, acidity, milk or fruit pairing, and expected shelf life before selecting tea material.\n\nProcurement checklist:\n- Define target tea type and sensory direction before sampling.\n- Ask whether the tea base is designed for hot-fill, aseptic, chilled or made-to-order service.\n- Compare color, aroma, bitterness and aftertaste after the same dilution ratio.\n- Confirm batch documents, country of origin and allergen status.\n- Keep one approved reference sample for future batch comparison.",
+      "bodyZh": "商业茶饮配方首先要确定茶类，而不只是确定风味名称。红茶、绿茶、乌龙茶、白茶和黑茶都来自茶树 Camellia sinensis，但加工方式会带来完全不同的感官表现。红茶充分氧化，通常色泽更深、茶体更厚。乌龙茶介于绿茶和红茶之间，适合需要香气层次但不希望涩感过重的产品。绿茶和白茶采摘后不进行氧化，常用于清爽、鲜感和轻茶感饮品。黑茶则可能在制成后经历微生物发酵。\n\n对 B2B 买家来说，真正重要的是应用匹配。瓶装即饮茶往往需要颜色稳定、沉淀少并能适应热处理或无菌工艺。餐饮连锁更关注香气释放、稀释表现和门店操作稳定性。OEM 项目在选茶前应先确定目标杯型、甜度、酸度、是否搭配奶或水果以及预期货架期。\n\n采购检查清单：\n- 打样前先确定目标茶类和感官方向。\n- 确认茶基底适用于热灌装、无菌、冷藏或现制门店。\n- 在同一稀释比例下比较颜色、香气、苦涩和回甘。\n- 确认批次文件、原产地和过敏原状态。\n- 保留一份确认样作为后续批次对照。",
+      "sources": "Sources:\n- Tea Association of the USA, Tea Fact Sheet 2024: https://teausa.org/teausa/images/Tea_Association_Fact_Sheet_2024.pdf\n- RSC Food & Function, Black tea: chemical analysis and stability: https://pubs.rsc.org/en/content/articlehtml/2013/fo/c2fo30093a"
     },
     {
-      "slug": "tea-extract-quality-checklist",
-      "title": "Tea Extract QA",
-      "titleZh": "茶萃取质量检查",
-      "tag": "qa tea",
-      "summary": "Quality checklist for tea extracts and powders.",
-      "summaryZh": "茶萃取液与粉末的质量检查清单。",
-      "body": "Procurement teams should review sensory profile, soluble solids, microbiology, heavy metals, pesticide residue and shelf-life documentation.",
-      "bodyZh": "采购团队应检查感官风味、可溶性固形物、微生物、重金属、农残和保质期文件。"
+      "slug": "rtd-tea-base-procurement-checklist",
+      "title": "RTD Tea Base Procurement Checklist",
+      "titleZh": "即饮茶基底采购检查清单",
+      "tag": "rtd tea qa",
+      "summary": "A buyer-focused checklist for selecting tea bases for bottled and canned beverages.",
+      "summaryZh": "面向瓶装与罐装饮料采购的即饮茶基底选择清单。",
+      "body": "An RTD tea base should be judged under the same conditions as the finished beverage. A sample that tastes good in a lab cup may not perform after dilution, sweetening, acid adjustment, thermal processing or several weeks of storage. Before approval, buyers should test the base in the target formula and packaging route.\n\nKey checkpoints include flavor stability, soluble solids, turbidity, sediment, color drift, microbial specification, recommended dosage and process compatibility. If the product is shelf-stable and packed in a hermetically sealed container, the regulatory route may involve acidified or low-acid canned food requirements depending on final pH, water activity and process design. This makes early technical alignment important between the ingredient supplier, co-packer and brand owner.\n\nRecommended approval steps:\n- Request a technical specification and recommended dilution range.\n- Test the base in the target formula, not only in water.\n- Review pH, Brix, color and sediment before and after heat exposure.\n- Ask for microbiology limits, heavy metal and pesticide-residue documentation where relevant.\n- Confirm whether the supplier can provide batch COA and traceability records.\n- Align with the packer on pH, process filing and shelf-life validation when required.",
+      "bodyZh": "即饮茶基底应在最终饮料条件下判断，而不是只看实验室杯测。一个在清水中表现很好的样品，经过稀释、加糖、调酸、热处理或数周储存后，可能会出现风味变弱、颜色漂移或沉淀。正式确认前，采购方应把茶基底放入目标配方和目标包装工艺中测试。\n\n关键检查项包括风味稳定性、可溶性固形物、浊度、沉淀、颜色变化、微生物指标、推荐添加量和工艺兼容性。如果产品是密封包装的常温即饮产品，则最终 pH、水分活度和工艺设计可能决定是否涉及酸化食品或低酸罐藏食品相关要求，因此原料商、代工厂和品牌方需要尽早技术对齐。\n\n建议确认流程：\n- 索取技术规格书和推荐稀释范围。\n- 在目标配方中测试，不只是在水中测试。\n- 热处理前后检查 pH、Brix、颜色和沉淀。\n- 根据项目需要索取微生物、重金属和农残文件。\n- 确认供应商是否能提供批次 COA 和追溯记录。\n- 必要时与代工厂确认 pH、工艺备案和货架期验证。",
+      "sources": "Sources:\n- FDA, Acidified & Low-Acid Canned Foods Guidance Documents & Regulatory Information: https://www.fda.gov/food/guidance-documents-regulatory-information-topic-food-and-dietary-supplements/acidified-low-acid-canned-foods-guidance-documents-regulatory-information\n- Tea Association of the USA, Tea Fact Sheet 2024: https://teausa.org/teausa/images/Tea_Association_Fact_Sheet_2024.pdf"
     },
     {
-      "slug": "commercial-tea-flavor-trends",
-      "title": "Tea Flavor Trends",
-      "titleZh": "茶饮风味趋势",
-      "tag": "tea",
-      "summary": "Market insights for commercial tea beverage development.",
-      "summaryZh": "商业茶饮开发的市场洞察。",
-      "body": "Modern tea beverage programs increasingly combine clean tea profiles, fruit notes, low-sugar formats and operationally simple preparation methods.",
-      "bodyZh": "现代茶饮项目越来越重视清晰茶感、果香风味、低糖配方和易操作的制备方式。"
+      "slug": "tea-extract-powder-quality-control",
+      "title": "Tea Extract and Powder Quality Control",
+      "titleZh": "茶萃取液与粉末质量控制",
+      "tag": "qa tea extract",
+      "summary": "Quality points for concentrated tea extracts and powders used in beverage manufacturing.",
+      "summaryZh": "用于饮料生产的浓缩茶萃取液与粉末质量控制要点。",
+      "body": "Tea extracts and powders are convenient for scale production, but concentration also makes quality variation easier to notice. A good QC program should connect sensory evaluation with measurable specifications. Buyers should not rely only on color or one tasting session; they should compare aroma, bitterness, astringency, solubility and aftertaste across multiple batches.\n\nTea polyphenols are important quality markers. Research describes catechins as major compounds in green and white teas, while black tea contains theaflavins, thearubigins and related polymeric pigments. USDA data also shows that flavan-3-ol profiles change as fermentation or oxidation increases from green to oolong to black tea. These differences matter because they influence color, mouthfeel, perceived strength and stability in beverage systems.\n\nPractical QC items:\n- Sensory profile: aroma, tea body, bitterness, astringency and aftertaste.\n- Physical performance: solubility, turbidity, sediment and color stability.\n- Chemical markers: solids, pH, caffeine or polyphenol targets when specified.\n- Safety documents: microbiology, heavy metals, pesticide residues and allergen statements.\n- Batch control: COA, lot number, retained sample and shelf-life data.",
+      "bodyZh": "茶萃取液和茶粉适合规模化生产，但浓缩形态也会放大质量波动。好的质量控制应把感官评价和可量化规格连接起来。采购方不应只看颜色或一次杯测结果，而应跨批次比较香气、苦味、涩感、溶解性和回味。\n\n茶多酚是重要的质量指标。研究资料显示，绿茶和白茶中的代表性成分包括儿茶素；红茶中则含有茶黄素、茶红素和相关聚合色素。USDA 数据也指出，随着发酵或氧化程度从绿茶到乌龙茶再到红茶增加，黄烷醇组成会发生变化。这些差异会影响饮料系统中的颜色、口感厚度、茶感强度和稳定性。\n\n实用 QC 项目：\n- 感官表现：香气、茶体、苦味、涩感和回味。\n- 物理表现：溶解性、浊度、沉淀和颜色稳定性。\n- 化学指标：固形物、pH、咖啡因或指定多酚指标。\n- 安全文件：微生物、重金属、农残和过敏原声明。\n- 批次控制：COA、批号、留样和货架期数据。",
+      "sources": "Sources:\n- RSC Food & Function, Black tea: chemical analysis and stability: https://pubs.rsc.org/en/content/articlehtml/2013/fo/c2fo30093a\n- USDA ARS, Flavonoid content of tea: https://www.ars.usda.gov/research/publications/publication/?seqNo115=173295"
+    },
+    {
+      "slug": "shelf-stable-tea-beverage-safety",
+      "title": "Shelf-Stable Tea Beverage Safety: pH, Process and Records",
+      "titleZh": "常温茶饮安全：pH、工艺与记录",
+      "tag": "safety rtd qa",
+      "summary": "Why shelf-stable tea projects need early process review and documentation.",
+      "summaryZh": "说明常温茶饮项目为什么需要提前确认工艺和文件。",
+      "body": "Shelf-stable tea beverages require more than a good flavor base. If a finished beverage is packed in a hermetically sealed container and stored at ambient temperature, the product team must review pH, water activity, container type, thermal process and regulatory responsibilities. FDA defines low-acid canned food as food with finished equilibrium pH greater than 4.6 and water activity greater than 0.85, with certain exclusions. Acidified food is low-acid food to which acid or acid food is added so the finished equilibrium pH is 4.6 or below and water activity is greater than 0.85.\n\nFor brands, this means the formula and process should be developed together. Tea base concentration, fruit juice, citric acid, sugar, preservatives, carbonation and packaging all affect the final risk profile. The co-packer or process authority should confirm the scheduled process and documentation requirements for the actual product and container.\n\nProject documents to prepare:\n- Formula version and target pH/Brix range.\n- Heat treatment or aseptic process conditions.\n- Container size, closure and filling method.\n- Microbiology and shelf-life validation plan.\n- Batch records and deviation handling procedure.\n- Supplier COA and traceability documents for tea ingredients.",
+      "bodyZh": "常温茶饮项目不只是选择一个好喝的茶基底。如果成品饮料采用密封容器并在常温储存，项目团队必须提前评估 pH、水分活度、容器类型、热处理工艺和监管责任。FDA 将低酸罐藏食品定义为最终平衡 pH 大于 4.6 且水分活度大于 0.85 的食品，部分品类除外。酸化食品则是在低酸食品中加入酸或酸性食品，使最终平衡 pH 达到 4.6 或以下且水分活度大于 0.85。\n\n对品牌方来说，这意味着配方和工艺必须同步开发。茶基底浓度、果汁、柠檬酸、糖、防腐体系、碳酸化和包装都会影响最终风险。代工厂或工艺权威人员应针对实际产品和容器确认预定工艺和文件要求。\n\n建议准备的项目文件：\n- 配方版本和目标 pH/Brix 范围。\n- 热处理或无菌工艺条件。\n- 容器规格、封口方式和灌装方式。\n- 微生物和货架期验证计划。\n- 批生产记录和偏差处理流程。\n- 茶原料供应商 COA 和追溯文件。",
+      "sources": "Sources:\n- FDA, Acidified & Low-Acid Canned Foods Guidance Documents & Regulatory Information: https://www.fda.gov/food/guidance-documents-regulatory-information-topic-food-and-dietary-supplements/acidified-low-acid-canned-foods-guidance-documents-regulatory-information"
+    },
+    {
+      "slug": "cold-brew-tea-sop-for-fb-chains",
+      "title": "Cold Brew Tea SOP for F&B Chains",
+      "titleZh": "餐饮连锁冷泡茶 SOP",
+      "tag": "sop tea safety",
+      "summary": "A practical cold brew SOP framework for multi-store beverage operations.",
+      "summaryZh": "适用于多门店饮品运营的冷泡茶 SOP 框架。",
+      "body": "Cold brew tea can deliver a clean, soft profile for fruit tea, sparkling tea and low-sugar menus. For chains, the challenge is not only flavor; it is repeatability. A cold brew SOP should control tea dosage, water quality, extraction temperature, time, filtration, holding time and store hygiene.\n\nA practical starting point is to define one standard batch size, one approved tea material and one target sensory profile. Stores should not adjust steeping time casually because longer extraction can increase bitterness, turbidity and batch-to-batch variation. If the beverage will be held cold for service, the brand should define maximum holding time and discard rules with food-safety input.\n\nExample SOP framework:\n- Use approved tea material and filtered water.\n- Record tea weight, water volume, start time and end time.\n- Brew under refrigerated or validated controlled conditions.\n- Filter before service to reduce leaf fragments and sediment.\n- Label each batch with production time and discard time.\n- Train stores to taste against a reference sample before launch.",
+      "bodyZh": "冷泡茶适合水果茶、气泡茶和低糖菜单，能带来干净、柔和的茶感。对连锁门店来说，挑战不只是好喝，而是稳定复现。冷泡 SOP 应控制茶叶用量、水质、萃取温度、时间、过滤、保存时间和门店卫生。\n\n实用起点是先确定标准批量、指定茶原料和目标感官表现。门店不应随意延长浸泡时间，因为更长萃取可能增加苦涩、浊度和批次差异。如果饮品需要冷藏待售，品牌应结合食品安全要求明确最长保存时间和废弃规则。\n\n示例 SOP 框架：\n- 使用确认过的茶原料和过滤水。\n- 记录茶叶重量、水量、开始时间和结束时间。\n- 在冷藏或已验证的受控条件下萃取。\n- 出品前过滤，减少茶叶碎屑和沉淀。\n- 每批标注制作时间和废弃时间。\n- 上新前培训门店按标准样进行对照品评。",
+      "sources": "Sources:\n- Tea Association of the USA, Tea Fact Sheet 2024: https://teausa.org/teausa/images/Tea_Association_Fact_Sheet_2024.pdf\n- FDA Food Safety Modernization Act resources: https://www.fda.gov/food/food-safety-modernization-act-fsma"
+    },
+    {
+      "slug": "oem-odm-tea-beverage-development-workflow",
+      "title": "OEM/ODM Tea Beverage Development Workflow",
+      "titleZh": "OEM/ODM 茶饮开发流程",
+      "tag": "oem rtd tea",
+      "summary": "A step-by-step workflow from brief to commercial production for tea beverage projects.",
+      "summaryZh": "从需求简报到商业化生产的茶饮 OEM/ODM 项目流程。",
+      "body": "A successful OEM/ODM tea beverage project depends on clear decisions at each stage. The first stage is the brief: target consumer, channel, pack format, price band, sweetness, claim direction and launch date. The second stage is formula direction: tea type, flavor pairing, acidity, color, mouthfeel and expected shelf life. The third stage is technical validation: process compatibility, stability, ingredient documents and packaging review.\n\nBrands often lose time when flavor approval happens before process feasibility. A tea beverage that tastes excellent in bench samples may change after heat treatment, carbonation, aseptic filling or storage. The supplier, brand and factory should therefore review formula and production constraints together.\n\nRecommended workflow:\n- Project brief and benchmark tasting.\n- Tea base and ingredient selection.\n- Lab sample and sensory review.\n- Pilot trial with process and packaging check.\n- Stability, microbiology and documentation review.\n- Commercial production handoff with approved specification and retained sample.",
+      "bodyZh": "成功的 OEM/ODM 茶饮项目取决于每个阶段的决策是否清晰。第一阶段是需求简报：目标消费者、渠道、包装形式、价格带、甜度、宣称方向和上市时间。第二阶段是配方方向：茶类、风味搭配、酸度、颜色、口感和预期货架期。第三阶段是技术验证：工艺兼容性、稳定性、原料文件和包装评估。\n\n很多品牌会在“风味确认”早于“工艺可行性确认”时浪费时间。实验室样品中很好喝的茶饮，经过热处理、碳酸化、无菌灌装或储存后可能发生变化。因此供应商、品牌方和工厂应同时评估配方和生产限制。\n\n推荐流程：\n- 项目简报和竞品品评。\n- 茶基底和配套原料选择。\n- 实验室打样和感官评审。\n- 小试，确认工艺和包装适配。\n- 稳定性、微生物和文件评估。\n- 带确认规格书和留样进入商业化生产。",
+      "sources": "Sources:\n- RSC Food & Function, Black tea: chemical analysis and stability: https://pubs.rsc.org/en/content/articlehtml/2013/fo/c2fo30093a\n- FDA, Acidified & Low-Acid Canned Foods Guidance Documents & Regulatory Information: https://www.fda.gov/food/guidance-documents-regulatory-information-topic-food-and-dietary-supplements/acidified-low-acid-canned-foods-guidance-documents-regulatory-information"
+    },
+    {
+      "slug": "tea-polyphenols-flavor-and-label-communication",
+      "title": "Tea Polyphenols, Flavor and Label Communication",
+      "titleZh": "茶多酚、风味与标签沟通",
+      "tag": "tea qa",
+      "summary": "How tea polyphenol differences affect sensory profile, quality control and brand communication.",
+      "summaryZh": "说明茶多酚差异如何影响感官表现、质量控制和品牌沟通。",
+      "body": "Tea polyphenols are often discussed as nutrition or functional compounds, but for beverage manufacturers they are also sensory and quality markers. Catechins, theaflavins and thearubigins contribute to bitterness, astringency, color and perceived tea strength. As oxidation or fermentation changes, the profile of flavan-3-ols also changes, which is why green, oolong and black teas behave differently in beverages.\n\nFor label and marketing communication, brands should be careful. Scientific sources describe associations and research directions, but finished product claims depend on local regulations and actual formulation data. A safer B2B approach is to communicate tea type, origin, sensory profile and process quality unless validated claims are available.\n\nUseful quality language:\n- Tea type and processing style.\n- Sensory profile such as fresh, roasted, floral, malty, mellow or brisk.\n- Batch consistency and traceability.\n- Caffeine target or range when tested.\n- Polyphenol target only when supported by analytical testing.",
+      "bodyZh": "茶多酚常被当作营养或功能成分讨论，但对饮料制造商来说，它也是感官和质量指标。儿茶素、茶黄素和茶红素会影响苦味、涩感、颜色和茶感强度。随着氧化或发酵程度变化，黄烷醇组成也会变化，这就是绿茶、乌龙茶和红茶在饮料中表现不同的原因。\n\n在标签和营销沟通中，品牌需要谨慎。科学资料可以说明相关性和研究方向，但成品宣称取决于当地法规和实际配方数据。更稳妥的 B2B 表达是沟通茶类、产地、感官特征和工艺质量；只有在有检测和法规支持时才使用具体功能或含量宣称。\n\n可使用的质量表达：\n- 茶类和加工方式。\n- 清新、焙火、花香、麦芽、醇和或鲜爽等感官描述。\n- 批次稳定性和可追溯性。\n- 经检测支持的咖啡因目标或范围。\n- 只有在分析检测支持下才使用多酚目标。",
+      "sources": "Sources:\n- USDA ARS, Flavonoid content of tea: https://www.ars.usda.gov/research/publications/publication/?seqNo115=173295\n- Linus Pauling Institute, Oregon State University, Tea: https://lpi.oregonstate.edu/mic/food-beverages/tea\n- RSC Food & Function, Black tea: chemical analysis and stability: https://pubs.rsc.org/en/content/articlehtml/2013/fo/c2fo30093a"
     }
   ],
   "products": [
