@@ -42,6 +42,11 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
+	.product-carousel {
+		grid-auto-columns: minmax(300px, 78vw);
+		grid-template-columns: none;
+	}
+
 	.contact-layout {
 		grid-template-columns: 1fr;
 	}
@@ -124,20 +129,27 @@
 		grid-template-columns: 1fr;
 	}
 
+	.product-carousel {
+		grid-auto-flow: column;
+		grid-auto-columns: minmax(286px, 86vw);
+		grid-template-columns: none;
+		overflow-x: auto;
+	}
+
 	.timeline-scroll {
 		display: grid;
-		grid-auto-flow: row;
-		grid-auto-columns: unset;
-		overflow: visible;
+		grid-auto-flow: column;
+		grid-auto-columns: minmax(250px, 82vw);
+		overflow-x: auto;
 	}
 
 	.timeline-card::before {
-		top: 0;
-		bottom: 0;
-		left: 59px;
-		right: auto;
-		border-top: 0;
-		border-left: 2px solid var(--gold);
+		top: 39px;
+		bottom: auto;
+		left: 0;
+		right: 0;
+		border-top: 2px solid var(--gold);
+		border-left: 0;
 	}
 
 	.site-footer {

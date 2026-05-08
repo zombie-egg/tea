@@ -549,7 +549,8 @@ p {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='110' height='110'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.7' numOctaves='3' seed='12'/%3E%3CfeColorMatrix type='matrix' values='.6 0 0 0 .24 0 .56 0 0 .2 0 0 .5 0 .12 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='110' height='110' filter='url(%23g)' opacity='.85'/%3E%3C/svg%3E"),
     rgba(255, 253, 248, 0.58);
   background-blend-mode: multiply, normal;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  transform-style: preserve-3d;
+  transition: transform 0.35s cubic-bezier(0.2, 1, 0.2, 1), box-shadow 0.35s, border-color 0.35s, filter 0.35s;
 }
 
 .image-card:hover,
@@ -558,9 +559,10 @@ p {
 .solution-card:hover,
 .resource-card:hover,
 .cert-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-8px) rotateX(2deg) rotateY(-3deg) scale(1.025);
   border-color: rgba(95, 117, 88, 0.45);
-  box-shadow: 0 16px 32px rgba(71, 47, 27, 0.15);
+  box-shadow: 0 28px 70px rgba(8, 45, 38, 0.2);
+  filter: saturate(1.05) contrast(1.04);
 }
 
 .image-card img,
@@ -568,6 +570,45 @@ p {
   width: 100%;
   aspect-ratio: 1.5;
   object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.2, 1, 0.2, 1), filter 0.7s;
+}
+
+.image-card:hover img,
+.product-card:hover img {
+  transform: scale(1.08);
+  filter: saturate(1.12) contrast(1.04);
+}
+
+.product-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(310px, 360px);
+  grid-template-columns: none;
+  gap: 22px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 10px 8px 24px;
+  scroll-snap-type: x mandatory;
+  perspective: 1200px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-carousel .product-card {
+  scroll-snap-align: start;
+  min-width: 0;
+  animation: floatCard 6.5s ease-in-out infinite;
+}
+
+.product-carousel .product-card:nth-child(2) {
+  animation-delay: -1.4s;
+}
+
+.product-carousel .product-card:nth-child(3) {
+  animation-delay: -2.8s;
+}
+
+.product-carousel .product-card:nth-child(4) {
+  animation-delay: -4.2s;
 }
 
 .image-card h3,
@@ -614,12 +655,32 @@ p {
   gap: 18px;
   overflow-x: auto;
   padding: 10px 4px 18px;
+  scroll-snap-type: x mandatory;
+  perspective: 1000px;
 }
 
 .timeline-card {
   position: relative;
   padding: 24px;
   cursor: pointer;
+  scroll-snap-align: center;
+  animation: timelinePulse 7s ease-in-out infinite;
+}
+
+.timeline-card:nth-child(2) {
+  animation-delay: -1.2s;
+}
+
+.timeline-card:nth-child(3) {
+  animation-delay: -2.4s;
+}
+
+.timeline-card:nth-child(4) {
+  animation-delay: -3.6s;
+}
+
+.timeline-card:nth-child(5) {
+  animation-delay: -4.8s;
 }
 
 .timeline-card::before {
@@ -651,6 +712,16 @@ p {
 }
 
 .timeline-card.open .more {
+  display: block;
+}
+
+.timeline-card.is-active {
+  border-color: rgba(8, 45, 38, 0.48);
+  box-shadow: 0 26px 60px rgba(8, 45, 38, 0.16);
+  transform: translateY(-8px) rotateY(-4deg) scale(1.035);
+}
+
+.timeline-card.is-active .more {
   display: block;
 }
 
@@ -952,6 +1023,10 @@ textarea:focus {
   transform: none;
 }
 
+.hero-content {
+  animation: heroImpact 7s ease-in-out infinite;
+}
+
 .mobile-menu-btn {
   position: fixed;
   top: 18px;
@@ -1005,6 +1080,36 @@ textarea:focus {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0) rotateY(0);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(1.5deg) rotateY(-2.5deg);
+  }
+}
+
+@keyframes timelinePulse {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-7px) rotateY(-3deg) scale(1.025);
+  }
+}
+
+@keyframes heroImpact {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.015);
   }
 }
 
