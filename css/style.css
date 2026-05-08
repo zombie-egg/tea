@@ -265,18 +265,25 @@ p {
 
 .home-button {
   position: fixed;
-  top: 22px;
-  right: 28px;
+  right: 24px;
+  bottom: 94px;
   z-index: 30;
-  display: inline-flex;
-  gap: 8px;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
   align-items: center;
-  padding: 12px 18px;
-  border-radius: 999px;
+  padding: 0;
+  border-radius: 50%;
   background: linear-gradient(140deg, #ab7651, #8f5f3d);
   color: #fff;
+  font-size: 0;
   font-weight: 900;
   box-shadow: 0 10px 24px rgba(75, 42, 22, 0.28);
+}
+
+.home-button i {
+  font-size: 26px;
 }
 
 .hero {

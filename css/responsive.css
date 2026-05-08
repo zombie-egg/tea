@@ -65,9 +65,11 @@
 	}
 
 	.home-button {
-		top: 14px;
-		right: 14px;
-		padding: 10px 13px;
+		right: 18px;
+		bottom: 88px;
+		width: 58px;
+		height: 58px;
+		padding: 0;
 	}
 
 	.hero {

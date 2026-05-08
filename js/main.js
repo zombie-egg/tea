@@ -175,6 +175,111 @@ const languageDictionary={
   "Thank you. Our team will review your sample request soon.":"谢谢，我们会尽快审核你的样品申请。",
   "Back to Home":"返回首页"
 };
+Object.assign(languageDictionary,{
+  "Advantages":"优势",
+  "Application fit.":"应用匹配。",
+  "Article Title":"文章标题",
+  "Article body content.":"文章正文内容。",
+  "Back to About":"返回关于我们",
+  "Back to Products":"返回产品页",
+  "Back to Quality":"返回质量页",
+  "Back to Resources":"返回资源页",
+  "Back to Solutions":"返回解决方案",
+  "B2B Focus":"B2B 专注",
+  "Brand Intro":"品牌简介",
+  "Brand Introduction":"品牌介绍",
+  "Brand and OEM solution detail page.":"品牌与 OEM 解决方案详情页。",
+  "Brand development timeline":"品牌发展时间轴",
+  "Browse FAQ":"浏览常见问题",
+  "Business contact channels":"商务联系渠道",
+  "Capacity Upgrade":"产能升级",
+  "Certification detail page.":"认证详情页。",
+  "Common export and QA questions":"常见出口与质量问题",
+  "Consistent base materials for large-scale drink production.":"适合大规模饮品生产的稳定基底原料。",
+  "Coordination across planning, sampling and delivery for project continuity.":"从规划、打样到交付的连续项目协同。",
+  "Core numbers that reflect TeaSourcex service capability.":"体现 TeaSourcex 服务能力的核心数字。",
+  "Data Highlights":"数据亮点",
+  "Data highlights for B2B supply":"B2B 供应数据亮点",
+  "Dedicated support for manufacturers, brands and chain stores became the main strategy.":"制造商、品牌和连锁门店支持成为核心方向。",
+  "Detailed brand story page.":"品牌故事详情页。",
+  "Detailed factory and production capacity page.":"工厂与产能详情页。",
+  "Detailed team introduction page.":"团队介绍详情页。",
+  "Export Expansion":"出口拓展",
+  "Factory system optimized.":"工厂系统优化。",
+  "F&B chain solution detail page.":"餐饮连锁解决方案详情页。",
+  "Flexible OEM/ODM support":"灵活的 OEM/ODM 支持",
+  "Flexible formats for flavor intensity and process compatibility.":"适配风味强度与生产工艺的灵活规格。",
+  "Formula, packaging and process support for private-label and custom projects.":"为自有品牌和定制项目提供配方、包装与流程支持。",
+  "Frequently asked questions detail page.":"常见问题详情页。",
+  "From sourcing to delivery, teams collaborate to support formula, quality and lead-time goals.":"从采购到交付，团队协同支持配方、质量与交期目标。",
+  "Home Visual":"首页视觉",
+  "How to evaluate tea ingredients before scaling an order.":"如何在扩大订单前评估茶饮原料。",
+  "Independent article URL demo: /resources/blog/article-slug.":"独立文章 URL 示例：/resources/blog/article-slug。",
+  "Industrial solution detail page.":"工业化解决方案详情页。",
+  "Initial cooperation with regional tea growers built the first stable sourcing network.":"与区域茶农的早期合作建立了稳定采购网络。",
+  "Inquiry form for pricing and project details, sample request form for product verification.":"询价表单用于价格与项目详情，样品表单用于产品验证。",
+  "Insights":"洞察",
+  "Keep your existing product workflow while gaining stable tea supply, practical support and long-term manufacturing coordination.":"在保留现有产品流程的同时，获得稳定茶源、实用支持和长期生产协同。",
+  "Latest tea knowledge and practical resources":"最新茶知识与实用资源",
+  "Milestones":"里程碑",
+  "Natural profile with practical output":"自然风味与实用产出",
+  "News-style content, process notes and operation references for your team.":"为团队准备的资讯、流程笔记与操作参考。",
+  "Open Form":"打开表单",
+  "Overseas channels launched.":"海外渠道启动。",
+  "Preparation reference.":"制备参考。",
+  "Process control, documentation and quality communication were strengthened for international buyers.":"面向国际买家强化过程控制、文档与质量沟通。",
+  "Product Catalog":"产品目录",
+  "Product detail page for RTD tea bases.":"即饮茶基底详情页。",
+  "Product detail page for tea extracts and powders.":"茶萃取液与粉末详情页。",
+  "Product detail page for tea ingredients.":"茶叶原料详情页。",
+  "Production and warehousing coordination improved lead-time reliability for larger programs.":"生产与仓储协同提升大型项目交期稳定性。",
+  "QA system detail page.":"质量管控体系详情页。",
+  "Quality Assurance":"质量保障",
+  "Quality capability improved.":"质量能力提升。",
+  "Quality Recognition":"质量认可",
+  "Quick links":"快速链接",
+  "Quick references for lead time, documentation and compliance communication.":"交期、文件和合规沟通的快速参考。",
+  "R&D capability detail page.":"研发能力详情页。",
+  "Read in Blog":"阅读博客",
+  "Request Samples":"申请样品",
+  "Responsive B2B service":"响应式 B2B 服务",
+  "Routine checkpoints and batch records support predictable production output.":"常规检查点与批次记录支持可预测的生产结果。",
+  "SOP library detail page.":"SOP 库详情页。",
+  "Service detail page for OEM and ODM projects.":"OEM/ODM 项目服务详情页。",
+  "Service model upgraded.":"服务模式升级。",
+  "Stable quality system":"稳定质量体系",
+  "Start your inquiry or sample request":"提交询价或样品申请",
+  "Static blog listing page. CMS integration can be added later.":"静态博客列表页，后续可接入 CMS。",
+  "Supply advantages for long-term cooperation":"长期合作的供应优势",
+  "Supporting components for menu extension and seasonal development.":"支持菜单扩展与季节性开发的配套组件。",
+  "Tap each year to view key progress in sourcing, production and B2B service.":"点击年份查看采购、生产与 B2B 服务进展。",
+  "Tea quality checklist for procurement":"采购用茶叶质量检查清单",
+  "Tea ingredients partner for beverage and food businesses":"饮料与食品业务的茶饮原料伙伴",
+  "TeaSourcex aligns natural tea character with repeatable industrial production requirements.":"TeaSourcex 将自然茶感与可重复工业化生产需求结合。",
+  "TeaSourcex started serving cross-border beverage projects and diversified shipment standards.":"TeaSourcex 开始服务跨境饮品项目与多样化出货标准。",
+  "Tell us your application needs and target market, and we will respond with matching options.":"告诉我们应用需求和目标市场，我们会回复匹配方案。",
+  "Timeline":"时间轴",
+  "Traditional mindset, modern coordination":"传统理念，现代协同",
+  "Use the main contact page inquiry form.":"请使用主联系页的询价表单。",
+  "Use the main contact page sample request form.":"请使用主联系页的样品申请表单。",
+  "View SOP Library":"查看 SOP 库",
+  "Why TeaSourcex":"为什么选择 TeaSourcex",
+  "sales@example.com":"sales@example.com",
+  "RTD":"即饮茶",
+  "Tea":"茶",
+  "A practical sequence from sample validation to production handoff.":"从样品验证到量产交付的实用流程。",
+  "Certifications":"认证",
+  "FAQ":"常见问题",
+  "FDA":"FDA",
+  "HACCP":"HACCP",
+  "Halal":"Halal",
+  "ISO":"ISO",
+  "RTD project prep and launch rhythm":"即饮茶项目准备与上线节奏",
+  "Tea Partner":"茶饮伙伴",
+  "Tea supply business established.":"茶叶供应业务建立。",
+  "Thank You | Inquiry Submitted":"谢谢 | 询价已提交",
+  "Thank You | Sample Request Submitted":"谢谢 | 样品申请已提交"
+});
 const placeholderDictionary={
   "Company Ltd.":"公司名称",
   "Name":"联系人姓名",
@@ -217,6 +322,8 @@ function translateAttributes(lang){
 }
 function applyLanguage(lang){
   document.documentElement.lang=lang==="zh"?"zh-CN":"en";
+  if(!document.documentElement.dataset.originalTitle)document.documentElement.dataset.originalTitle=document.title;
+  document.title=lang==="zh"?(languageDictionary[document.documentElement.dataset.originalTitle]||document.documentElement.dataset.originalTitle):document.documentElement.dataset.originalTitle;
   translateTextNodes(lang);
   translateAttributes(lang);
   localStorage.setItem("siteLanguage",lang);
@@ -233,13 +340,17 @@ document.querySelectorAll(".side-nav a").forEach(a=>a.addEventListener("click",(
 const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");revealObserver.unobserve(entry.target)}}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>revealObserver.observe(el));
 
+if(typeof CountUpLite!=="undefined"){
 const countObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.querySelectorAll("[data-countup]").forEach(el=>new CountUpLite(el,el.dataset.target).start());countObserver.unobserve(entry.target)}),{threshold:.35});
 document.querySelectorAll(".countup-zone").forEach(zone=>countObserver.observe(zone));
+}
 
 document.querySelectorAll(".timeline-card").forEach(card=>card.addEventListener("click",()=>card.classList.toggle("open")));
+if(typeof filterCards==="function"){
 filterCards(".product-grid",".filter-bar [data-filter]",".product-card");
 filterCards(".blog-list",".tag-filter [data-filter]",".blog-card");
-initLightbox();
+}
+if(typeof initLightbox==="function")initLightbox();
 
 document.querySelectorAll("[data-tabs]").forEach(tabset=>{const buttons=tabset.querySelectorAll("[data-tab]");const panels=tabset.querySelectorAll("[data-tab-panel]");buttons.forEach(btn=>btn.addEventListener("click",()=>{buttons.forEach(b=>b.classList.remove("active"));panels.forEach(p=>p.classList.remove("active"));btn.classList.add("active");tabset.querySelector(`[data-tab-panel="${btn.dataset.tab}"]`)?.classList.add("active")}))});
 document.querySelectorAll(".accordion-trigger").forEach(btn=>btn.addEventListener("click",()=>btn.closest(".accordion-item").classList.toggle("open")));
