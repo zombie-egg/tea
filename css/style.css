@@ -686,7 +686,7 @@ p {
 }
 
 .timeline-card .more {
-  display: none;
+  display: block;
   margin-top: 10px;
 }
 
