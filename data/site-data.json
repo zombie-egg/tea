@@ -130,12 +130,12 @@
       "slug": "oem-odm-service",
       "filter": "oem",
       "title": "OEM/ODM Service",
-      "titleZh": "OEM/ODM 服务",
+      "titleZh": "OEM/ODM Service 代工服务",
       "summary": "Custom product development from formula to production handoff.",
-      "summaryZh": "从配方开发到量产交付的定制服务。",
+      "summaryZh": "Custom product development. / 定制产品开发。",
       "image": "https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=900",
       "detail": "Formula design, sampling, pilot review, packaging coordination and production support for private-label tea beverage projects.",
-      "detailZh": "为自有品牌茶饮项目提供配方设计、打样、小试评估、包装协同和生产支持。"
+      "detailZh": "Formula design, sampling, pilot review, packaging coordination and production support for private-label tea beverage projects. / 为自有品牌茶饮项目提供配方设计、打样、小试评估、包装协同和生产支持。"
     }
   ]
 }
