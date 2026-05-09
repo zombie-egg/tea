@@ -510,6 +510,15 @@ function applySiteData(){
   renderArticles(currentSiteData.articles||[]);
   renderArticleDetail(currentSiteData.articles||[]);
 }
+function ensureAutoplayVideos(){
+  document.querySelectorAll("video[autoplay]").forEach(video=>{
+    video.muted=true;
+    video.playsInline=true;
+    const play=()=>video.play().catch(()=>{});
+    if(video.readyState>=2)play();
+    else video.addEventListener("loadeddata",play,{once:true});
+  });
+}
 async function loadSiteData(){
   if(location.protocol==="file:")return;
   try{
@@ -572,6 +581,7 @@ applyLanguage(languageSelect.value);
 document.querySelector(".mobile-menu-btn")?.addEventListener("click",()=>body.classList.toggle("menu-open"));
 document.querySelector(".menu-backdrop")?.addEventListener("click",()=>body.classList.remove("menu-open"));
 document.querySelectorAll(".side-nav a").forEach(a=>a.addEventListener("click",()=>body.classList.remove("menu-open")));
+ensureAutoplayVideos();
 
 const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");revealObserver.unobserve(entry.target)}}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>revealObserver.observe(el));
@@ -581,7 +591,10 @@ const countObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if
 document.querySelectorAll(".countup-zone").forEach(zone=>countObserver.observe(zone));
 }
 
-document.querySelectorAll(".timeline-card").forEach(card=>card.addEventListener("click",()=>card.classList.toggle("open")));
+document.querySelectorAll(".timeline-card").forEach(card=>card.addEventListener("click",()=>{
+  document.querySelectorAll(".timeline-card").forEach(item=>item.classList.remove("is-active"));
+  card.classList.add("is-active","open");
+}));
 if(typeof filterCards==="function"){
 filterCards(".product-grid",".filter-bar [data-filter]",".product-card");
 filterCards(".blog-list",".tag-filter [data-filter]",".blog-card");

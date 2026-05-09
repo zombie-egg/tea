@@ -107,14 +107,46 @@ function serveStatic(req, res) {
     res.end("Not found");
     return;
   }
+  const ext = path.extname(filePath).toLowerCase();
+  const contentType = mimeTypes[ext] || "application/octet-stream";
+  const isVideo = [".mp4", ".webm", ".mov"].includes(ext);
+
+  if (isVideo && req.headers.range) {
+    fs.stat(filePath, (statErr, stats) => {
+      if (statErr) {
+        res.writeHead(404);
+        res.end("Not found");
+        return;
+      }
+      const range = req.headers.range.replace(/bytes=/, "").split("-");
+      const start = Number.parseInt(range[0], 10);
+      const end = range[1] ? Number.parseInt(range[1], 10) : stats.size - 1;
+      if (Number.isNaN(start) || Number.isNaN(end) || start >= stats.size || end >= stats.size) {
+        res.writeHead(416, { "Content-Range": `bytes */${stats.size}` });
+        res.end();
+        return;
+      }
+      res.writeHead(206, {
+        "Content-Range": `bytes ${start}-${end}/${stats.size}`,
+        "Accept-Ranges": "bytes",
+        "Content-Length": end - start + 1,
+        "Content-Type": contentType
+      });
+      fs.createReadStream(filePath, { start, end }).pipe(res);
+    });
+    return;
+  }
+
   fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(404);
       res.end("Not found");
       return;
     }
-    const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, { "Content-Type": mimeTypes[ext] || "application/octet-stream" });
+    res.writeHead(200, {
+      "Content-Type": contentType,
+      "Accept-Ranges": isVideo ? "bytes" : "none"
+    });
     res.end(data);
   });
 }

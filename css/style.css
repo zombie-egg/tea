@@ -1094,6 +1094,18 @@ textarea:focus {
   font-size: 0.95rem;
 }
 
+.text-link {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--tea-green-deep);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  color: var(--tea-green);
+}
+
 .module-page {
   padding-top: 92px;
 }
