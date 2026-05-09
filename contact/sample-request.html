@@ -3,24 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sample request form." />
+    <meta name="description" content="Sample Request Form | TeaSourcex" />
     <title>Sample Request Form | TeaSourcex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
   </head>
   <body>
-    <main class="page" style="margin-left:0">
-      <section class="panel reveal visible">
-        <p class="eyebrow">Contact</p>
-        <h1>Sample Request Form</h1>
-        <form class="form-grid" data-api="/api/sample-requests" data-redirect="../thank-you-sample.html">
-          <div class="form-row"><label>Product Type<select name="product_type" data-product-select><option>RTD Tea Bases</option><option>Tea Extracts & Powders</option><option>Tea Ingredients</option></select></label><label>Sample Quantity<input name="sample_quantity" required placeholder="e.g. 3 packs" /></label></div>
-          <div class="form-row"><label>Monthly Demand<input name="monthly_demand" placeholder="e.g. 1 ton" /></label><label>Email<input type="email" name="email" required placeholder="name@example.com" /></label></div>
-          <label>Message<textarea name="message" rows="4" placeholder="Sample requirements."></textarea></label>
-          <button class="btn primary" type="submit">Submit Sample Request</button>
-        </form>
+    <button class="mobile-menu-btn" aria-label="Open navigation"><i class="bi bi-list"></i></button>
+    <main class="page module-page">
+      <a class="home-button" href="../index.html"><i class="bi bi-house-door-fill"></i> Home</a>
+      <section class="doc-hero reveal">
+        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Sample Request Form" />
+        <div class="doc-hero-copy">
+          <p class="eyebrow">Contact</p>
+          <h1><span class="lang-en">Sample Request Form</span><span class="lang-zh">样品申请</span></h1>
+          <p><span class="lang-en">The best way to evaluate our products is to taste them in your own environment. Tell us what you are working on — we will put together a sample set that is relevant to your application.</span><span class="lang-zh">评估我们产品的最佳方式是在您自己的环境中进行品尝。请告诉我们您正在进行的项目——我们将为您准备一套与您的应用相关的样品。</span></p>
+          <div class="hero-actions"><a class="btn primary" href="../contact.html#inquiry">Send Inquiry</a><a class="btn ghost" href="../products.html">View Products</a></div>
+        </div>
       </section>
+      <article class="panel content-document">
+        <section class="content-section reveal form-section" id="sample-form-live">
+          <h2><span class="lang-en">Live Sample Request Form</span><span class="lang-zh">可提交样品申请表单</span></h2>
+          <form class="form-grid" data-api="/api/sample-requests" data-redirect="../thank-you-sample.html">
+            <div class="form-row"><label><span class="lang-en">Full Name *</span><span class="lang-zh">全名 *</span><input name="full_name" required placeholder="Name" /></label><label><span class="lang-en">Company Name *</span><span class="lang-zh">公司名称 *</span><input name="company" required /></label></div>
+            <div class="form-row"><label><span class="lang-en">Job Title *</span><span class="lang-zh">职位 *</span><input name="job_title" required /></label><label><span class="lang-en">Country / Region *</span><span class="lang-zh">国家/地区 *</span><input name="country" required /></label></div>
+            <div class="form-row"><label><span class="lang-en">Email Address *</span><span class="lang-zh">电子邮箱 *</span><input type="email" name="email" required /></label><label><span class="lang-en">WhatsApp / Phone Number *</span><span class="lang-zh">WhatsApp / 电话号码 *</span><input name="phone" required /></label></div>
+            <label><span class="lang-en">Shipping Address</span><span class="lang-zh">收货地址</span><input name="shipping_address" /></label>
+            <div class="form-row"><label><span class="lang-en">Sample Quantity *</span><span class="lang-zh">样品数量 *</span><input name="sample_quantity" required placeholder="e.g. 3 packs" /></label><label><span class="lang-en">Product category of interest</span><span class="lang-zh">感兴趣的产品类别</span><select name="product_category"><option>RTD Tea Bases - Fruit Tea</option><option>RTD Tea Bases - Milk Tea / Oolong</option><option>Tea Extracts & Liquid Concentrates</option><option>Spray-Dried Tea Powders</option><option>Phoenix Dancong / Dangcong Tea Ingredients</option><option>Black Tea Ingredients</option><option>Oolong Tea Ingredients</option><option>Green Tea Ingredients</option><option>Not sure - please recommend</option></select></label></div>
+            <label><span class="lang-en">Describe your application or product concept *</span><span class="lang-zh">请描述您的应用场景或产品构想 *</span><textarea name="message" rows="5" required placeholder="Developing a lemon tea extract for RTD bottling"></textarea></label>
+            <label><span class="lang-en">Estimated monthly volume requirement</span><span class="lang-zh">预估月需求量</span><select name="monthly_volume"><option>Still exploring / not yet determined</option><option>Under 500kg / 500L per month</option><option>500kg - 2,000kg per month</option><option>2,000kg - 10,000kg per month</option><option>Over 10,000kg per month</option></select></label>
+            <label><span class="lang-en">Are you currently working with another supplier?</span><span class="lang-zh">您目前是否已与其他供应商合作？</span><select name="current_supplier"><option>Yes</option><option>No</option><option>Not yet sourcing this category</option></select></label>
+            <button class="btn primary" type="submit"><span class="lang-en">Submit Sample Request</span><span class="lang-zh">提交样品申请</span></button>
+          </form>
+        </section>
+
+        <section class="content-section reveal">
+<h3><span class="lang-en">Request a Sample</span><span class="lang-zh">申请样品</span></h3>
+<p><span class="lang-en">The best way to evaluate our products is to taste them in your own environment. Tell us what you are working on — we will put together a sample set that is relevant to your application.</span><span class="lang-zh">评估我们产品的最佳方式是在您自己的环境中进行品尝。请告诉我们您正在进行的项目——我们将为您准备一套与您的应用相关的样品。</span></p>
+<h3><span class="lang-en">Your Details</span><span class="lang-zh">您的详细信息</span></h3>
+<p><span class="lang-en">Full Name *</span><span class="lang-zh">全名 *</span><br><span class="lang-en">Company Name *</span><span class="lang-zh">公司名称 *</span><br><span class="lang-en">Job Title *</span><span class="lang-zh">职位 *</span><br><span class="lang-en">Country / Region *</span><span class="lang-zh">国家/地区 *</span><br><span class="lang-en">Email Address *</span><span class="lang-zh">电子邮箱 *</span><br><span class="lang-en">WhatsApp / Phone Number *</span><span class="lang-zh">WhatsApp / 电话号码 *</span></p>
+<h3><span class="lang-en">Shipping Address</span><span class="lang-zh">用于寄送样品）</span></h3>
+<h3><span class="lang-en">Sample Request Details</span><span class="lang-zh">样品申请详情</span></h3>
+<p><span class="lang-en">Product category of interest:</span><span class="lang-zh">感兴趣的产品类别：(可多选)</span></p>
+<h3><span class="lang-en">RTD Tea Bases — Fruit Tea</span><span class="lang-zh">即饮茶基 — 果味茶</span></h3>
+<h3><span class="lang-en">RTD Tea Bases — Milk Tea / Oolong</span><span class="lang-zh">即饮茶基 — 奶茶 / 乌龙茶</span></h3>
+<h3><span class="lang-en">Tea Extracts &amp; Liquid Concentrates</span><span class="lang-zh">茶叶提取物及浓缩液</span></h3>
+<h3><span class="lang-en">Spray-Dried Tea Powders</span><span class="lang-zh">喷雾干燥茶粉</span></h3>
+<h3><span class="lang-en">Phoenix Dancong / Dangcong Tea Ingredients</span><span class="lang-zh">凤凰单丛茶原料</span></h3>
+<h3><span class="lang-en">Black Tea Ingredients</span><span class="lang-zh">红茶原料</span></h3>
+<h3><span class="lang-en">Oolong Tea Ingredients</span><span class="lang-zh">乌龙茶原料</span></h3>
+<h3><span class="lang-en">Green Tea Ingredients</span><span class="lang-zh">绿茶原料</span></h3>
+<h3><span class="lang-en">Not sure — please recommend based on my application</span><span class="lang-zh">尚不确定 — 请根据我的应用场景推荐</span></h3>
+<p><span class="lang-en">Describe your application or product concept: *</span><span class="lang-zh">请描述您的应用场景或产品构想 *</span><br><span class="lang-en">Estimated monthly volume requirement:</span><span class="lang-zh">预估月需求量</span></p>
+<h3><span class="lang-en">Still exploring / not yet determined</span><span class="lang-zh">尚在探索阶段 / 尚未确定</span></h3>
+<h3><span class="lang-en">Under 500kg / 500L per month</span><span class="lang-zh">每月低于 500kg / 500L</span></h3>
+<p><span class="lang-en">500kg – 2,000kg per month</span><span class="lang-zh">每月 500kg – 2,000kg</span><br><span class="lang-en">2,000kg – 10,000kg per month</span><span class="lang-zh">每月 2,000kg – 10,000kg</span></p>
+<h3><span class="lang-en">Over 10,000kg per month</span><span class="lang-zh">每月超过 10,000kg</span></h3>
+<p><span class="lang-en">Are you currently working with another supplier for this ingredient?</span><span class="lang-zh">您目前是否已就此原料与其他供应商开展合作？</span><br>Yes<br>No</p>
+<h3><span class="lang-en">Not yet sourcing this category</span><span class="lang-zh">尚未开始采购此类原料</span></h3>
+<p><a class="btn primary small" href="../contact.html"><span class="lang-en">→ Submit Sample Request</span><span class="lang-zh">→ 提交样品申请</span></a></p>
+</section>
+<section class="content-section reveal"><h2><span class="lang-en">What Happens Next</span><span class="lang-zh">提交后流程说明</span></h2>
+<p>表单下方，消除客户疑虑<br><span class="lang-en">After you submit</span><span class="lang-zh">提交后：</span></p>
+<h3><span class="lang-en">Within 24 hours — Our team reviews your request and confirms which samples are most relevant to your application.</span><span class="lang-zh">24 小时内 — 我们的团队将审核您的申请，并确认哪些样品最符合您的应用需求。</span></h3>
+<p><span class="lang-en">Within 3–5 business days — Samples are prepared and dispatched via international courier. We will send you a tracking number.</span><span class="lang-zh">3-5 个工作日内 — 样品将准备完毕并通过国际快递寄出。我们会向您发送追踪号码。</span><br><span class="lang-en">After you receive samples — We follow up to get your feedback and answer any technical questions. If the product is a fit, we can move to specification confirmation and pricing discussion.</span><span class="lang-zh">收到样品后 — 我们会跟进您的反馈并解答任何技术问题。如果产品符合您的需求，我们将进入规格确认和价格洽谈阶段。</span></p>
+<p><span class="lang-en">Sample shipments are provided at no charge for qualified buyers. Courier costs may apply depending on destination — we will confirm this before dispatch.</span><span class="lang-zh">符合条件的买家可免费获得样品。快递费用可能因目的地而异 — 我们将在发货前与您确认。</span></p>
+</section>
+<section class="content-section reveal"><h2><span class="lang-en">Not Ready for Samples Yet?</span><span class="lang-zh">还没准备好申请样品？</span></h2>
+<h3><span class="lang-en">If you are still in the early stages of research, that is fine too.</span><span class="lang-zh">如果您仍处于研究初期阶段，也没关系。</span></h3>
+<p><a class="btn primary small" href="../products.html"><span class="lang-en">→ Browse our product range</span><span class="lang-zh">→ 浏览我们的产品系列</span></a></p>
+<p><a class="btn primary small" href="../products.html"><span class="lang-en">→ Send a general inquiry</span><span class="lang-zh">→ 发送一般咨询</span></a></p>
+<p><a class="btn primary small" href="../products.html"><span class="lang-en">→ Download our product catalogue (available upon inquiry) →</span><span class="lang-zh">可按需提供）</span></a></p>
+</section>
+<section class="content-section reveal"><h2>表单提交后的确认页（Thank You Page）</h2>
+<h3><span class="lang-en">Sample request received — thank you.</span><span class="lang-zh">已收到您的样品申请——感谢您的提交。</span></h3>
+<p><span class="lang-en">We will review your request and be in touch within 24 hours to confirm the sample selection and shipping details. Keep an eye on your inbox — and your WhatsApp if you provided a number.</span><span class="lang-zh">我们将尽快审核您的申请，并会在 24 小时内与您取得联系，以确认样品选择及发货详情。请留意您的收件箱——如果您留下了 WhatsApp 联系方式，也请留意该应用的消息。</span></p>
+<h3>两个引导按钮</h3>
+<p><a class="btn primary small" href="../products.html"><span class="lang-en">→ Learn About Our OEM/ODM Service</span><span class="lang-zh">→ 了解我们的 OEM/ODM 服务</span></a></p>
+<p><a class="btn primary small" href="../products.html"><span class="lang-en">→ Back to Products</span><span class="lang-zh">→ 返回产品列表</span></a></p>
+
+</section>
+        <div class="doc-actions"><a class="btn primary" href="../contact.html">Back</a><a class="btn ghost" href="../contact.html#sample">Request a Sample</a></div>
+      </article>
     </main>
-    <script src="../js/main.js"></script>
+    <a class="whatsapp-float" href="https://wa.me/85246550861" target="_blank" rel="noopener" aria-label="Contact on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <script src="../js/countup.min.js"></script><script src="../js/isotope.pkgd.min.js"></script><script src="../js/lightbox.min.js"></script><script src="../js/main.js"></script>
   </body>
 </html>

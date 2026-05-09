@@ -3,25 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Inquiry form." />
+    <meta name="description" content="Inquiry Form | TeaSourcex" />
     <title>Inquiry Form | TeaSourcex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/responsive.css" />
   </head>
   <body>
-    <main class="page" style="margin-left:0">
-      <section class="panel reveal visible">
-        <p class="eyebrow">Contact</p>
-        <h1>Inquiry Form</h1>
-        <form class="form-grid" data-api="/api/inquiries" data-redirect="../thank-you-inquiry.html">
-          <div class="form-row"><label>Company Name<input name="company" required placeholder="Company Ltd." /></label><label>Contact Person<input name="contact" required placeholder="Name" /></label></div>
-          <div class="form-row"><label>Email<input type="email" name="email" required placeholder="name@example.com" /></label><label>Phone<input name="phone" placeholder="+1 000 000 0000" /></label></div>
-          <div class="form-row"><label>Product Interest<select name="interest" data-product-select><option>RTD Tea Bases</option><option>Tea Extracts & Powders</option><option>Tea Ingredients</option><option>OEM/ODM Service</option></select></label><label>Inquiry Quantity<input name="quantity" placeholder="e.g. 500 kg" /></label></div>
-          <label>Message<textarea name="message" rows="5" placeholder="Tell us your application."></textarea></label>
-          <button class="btn primary" type="submit">Submit Inquiry</button>
-        </form>
+    <button class="mobile-menu-btn" aria-label="Open navigation"><i class="bi bi-list"></i></button>
+    <main class="page module-page">
+      <a class="home-button" href="../index.html"><i class="bi bi-house-door-fill"></i> Home</a>
+      <section class="doc-hero reveal">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" alt="Inquiry Form" />
+        <div class="doc-hero-copy">
+          <p class="eyebrow">Contact</p>
+          <h1><span class="lang-en">Inquiry Form</span><span class="lang-zh">询价表单</span></h1>
+          <p><span class="lang-en">Whether you have a specific product in mind or just want to explore what&#x27;s possible — we respond to every inquiry within 24 hours on business days.</span><span class="lang-zh">无论您心中已有特定产品，还是只是想了解各种可能性——我们都会在工作日的 24 小时内回复您的每一条咨询。</span></p>
+          <div class="hero-actions"><a class="btn primary" href="../contact.html#inquiry">Send Inquiry</a><a class="btn ghost" href="../products.html">View Products</a></div>
+        </div>
       </section>
+      <article class="panel content-document">
+        <section class="content-section reveal form-section" id="inquiry-form-live">
+          <h2><span class="lang-en">Live Inquiry Form</span><span class="lang-zh">可提交询价表单</span></h2>
+          <form class="form-grid" data-api="/api/inquiries" data-redirect="../thank-you-inquiry.html">
+            <div class="form-row"><label><span class="lang-en">Full Name *</span><span class="lang-zh">姓名 *</span><input name="full_name" required placeholder="Name" /></label><label><span class="lang-en">Company Name *</span><span class="lang-zh">公司名称 *</span><input name="company" required placeholder="Company Ltd." /></label></div>
+            <div class="form-row"><label><span class="lang-en">Job Title</span><span class="lang-zh">职位</span><input name="job_title" /></label><label><span class="lang-en">Country / Region *</span><span class="lang-zh">国家/地区 *</span><input name="country" required /></label></div>
+            <div class="form-row"><label><span class="lang-en">Email Address *</span><span class="lang-zh">电子邮箱 *</span><input type="email" name="email" required placeholder="name@example.com" /></label><label><span class="lang-en">WhatsApp / Phone Number</span><span class="lang-zh">WhatsApp / 电话号码</span><input name="phone" placeholder="+852 46550861" /></label></div>
+            <label><span class="lang-en">I am interested in</span><span class="lang-zh">感兴趣产品</span><select name="interest"><option>RTD Tea Bases</option><option>Tea Extracts & Powders</option><option>Tea Ingredients</option><option>OEM / ODM Service</option><option>General Partnership Inquiry</option></select></label>
+            <label><span class="lang-en">Tell us about your project or requirements</span><span class="lang-zh">请描述您的项目或需求</span><textarea name="message" rows="5" placeholder="Product type, target market, approximate volume, timeline"></textarea></label>
+            <label><span class="lang-en">How did you hear about us?</span><span class="lang-zh">您是如何得知我们的？</span><select name="source"><option>Trade show / Exhibition</option><option>Google Search</option><option>LinkedIn</option><option>Referral</option><option>Email outreach</option><option>Other</option></select></label>
+            <button class="btn primary" type="submit"><span class="lang-en">Send Inquiry</span><span class="lang-zh">发送咨询</span></button>
+          </form>
+        </section>
+
+        <section class="content-section reveal">
+<h3><span class="lang-en">Get in Touch</span><span class="lang-zh">联系我们</span></h3>
+<p><span class="lang-en">Whether you have a specific product in mind or just want to explore what&#x27;s possible — we respond to every inquiry within 24 hours on business days.</span><span class="lang-zh">无论您心中已有特定产品，还是只是想了解各种可能性——我们都会在工作日的 24 小时内回复您的每一条咨询。</span></p>
+<h3><span class="lang-en">Your Details</span><span class="lang-zh">您的详细信息</span></h3>
+<p><span class="lang-en">Full Name *</span><span class="lang-zh">姓名 *</span><br><span class="lang-en">Company Name *</span><span class="lang-zh">公司名称 *</span></p>
+<h3><span class="lang-en">Job Title</span><span class="lang-zh">职位</span></h3>
+<p><span class="lang-en">Country / Region *</span><span class="lang-zh">国家/地区 *</span><br><span class="lang-en">Email Address *</span><span class="lang-zh">电子邮箱 *</span></p>
+<h3><span class="lang-en">WhatsApp / Phone Number</span><span class="lang-zh">WhatsApp / 电话号码</span></h3>
+<h3><span class="lang-en">Your Inquiry</span><span class="lang-zh">您的咨询内容</span></h3>
+<h3><span class="lang-en">RTD Tea Bases</span><span class="lang-zh">即饮茶基底</span></h3>
+<h3><span class="lang-en">Tea Extracts &amp; Powders</span><span class="lang-zh">茶叶提取物与粉末</span></h3>
+<h3><span class="lang-en">Tea Ingredients</span><span class="lang-zh">茶叶配料</span></h3>
+<h3><span class="lang-en">OEM / ODM Service</span><span class="lang-zh">OEM / ODM 代工服务</span></h3>
+<h3><span class="lang-en">General Partnership Inquiry</span><span class="lang-zh">一般合作咨询</span></h3>
+<p><span class="lang-en">Tell us about your project or requirements:</span><span class="lang-zh">请描述您的项目或需求</span><br><span class="lang-en">How did you hear about us?</span><span class="lang-zh">您是如何得知我们的？</span></p>
+<h3><span class="lang-en">Trade show / Exhibition</span><span class="lang-zh">展会 / 博览会</span></h3>
+<h3><span class="lang-en">Google Search</span><span class="lang-zh">Google 搜索</span></h3>
+<h3>LinkedIn（LinkedIn）</h3>
+<h3><span class="lang-en">Referral</span><span class="lang-zh">朋友推荐</span></h3>
+<h3><span class="lang-en">Email outreach</span><span class="lang-zh">邮件推广</span></h3>
+<h3><span class="lang-en">Other</span><span class="lang-zh">其他</span></h3>
+<p><a class="btn primary small" href="../contact.html"><span class="lang-en">→ Send Inquiry</span><span class="lang-zh">→ 发送咨询</span></a></p>
+</section>
+<section class="content-section reveal"><h2><span class="lang-en">Direct Contact</span><span class="lang-zh">直接联系方式</span></h2>
+<h3><span class="lang-en">Email</span><span class="lang-zh">电子邮件</span></h3>
+<p>bruce@teasourcex.com</p>
+<h3>WhatsApp（WhatsApp）</h3>
+<p>+852 46550861<br><span class="lang-en">Available Monday – Friday, 9:00am – 6:00pm CST</span><span class="lang-zh">服务时间：周一至周五，全天营业</span></p>
+<h3><span class="lang-en">Office Address</span><span class="lang-zh">办公地址</span></h3>
+<h3><span class="lang-en">Guangzhou, Guangdong, China</span><span class="lang-zh">中国广东省广州市</span></h3>
+<p><span class="lang-en">(</span><span class="lang-zh">详细地址请补充)</span></p>
+<h3><span class="lang-en">WeChat</span><span class="lang-zh">微信</span></h3>
+<p>+86 13071632772</p>
+</section>
+<section class="content-section reveal"><h2>表单提交后的确认页（Thank You Page）</h2>
+<h3><span class="lang-en">Thank you — we have received your inquiry.</span><span class="lang-zh">感谢您的咨询。</span></h3>
+<p><span class="lang-en">A member of our team will be in touch within 24 hours on business days. In the meantime, feel free to explore our product range or download our company overview.</span><span class="lang-zh">我们的团队成员将在工作日24小时内与您联系。同时，您可以浏览我们的产品系列或下载公司简介。</span></p>
+<h3>两个引导按钮</h3>
+<p><a class="btn primary small" href="../products.html"><span class="lang-en">→ View Our Products</span><span class="lang-zh">→ 查看我们的产品</span></a></p>
+<p><a class="btn primary small" href="../contact.html"><span class="lang-en">→ Request a Sample</span><span class="lang-zh">→ 申请样品</span></a></p>
+</section>
+        <div class="doc-actions"><a class="btn primary" href="../contact.html">Back</a><a class="btn ghost" href="../contact.html#sample">Request a Sample</a></div>
+      </article>
     </main>
-    <script src="../js/main.js"></script>
+    <a class="whatsapp-float" href="https://wa.me/85246550861" target="_blank" rel="noopener" aria-label="Contact on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <script src="../js/countup.min.js"></script><script src="../js/isotope.pkgd.min.js"></script><script src="../js/lightbox.min.js"></script><script src="../js/main.js"></script>
   </body>
 </html>

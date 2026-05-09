@@ -363,14 +363,29 @@ function createMainNavigation(){
   const nav=document.createElement("nav");
   nav.className="site-top-nav";
   nav.setAttribute("aria-label","Primary navigation");
-  nav.innerHTML=primaryNavItems.map(([label,href])=>`<a href="${href}">${label}</a>`).join("");
+  const depth=location.pathname.split("/").filter(Boolean).length>1 ? "../" : "";
+  nav.innerHTML=primaryNavItems.map(([label,href])=>`<a href="${depth}${href}">${label}</a>`).join("");
   document.body.prepend(nav);
+}
+function ensureDrawerNavigation(){
+  if(document.querySelector(".admin-page")||document.querySelector(".sidebar"))return;
+  const depth=location.pathname.split("/").filter(Boolean).length>1 ? "../" : "";
+  const aside=document.createElement("aside");
+  aside.className="sidebar";
+  aside.innerHTML=`<a class="brand" href="${depth}index.html"><span>茶</span><strong>TeaSourcex</strong><small>Tea Partner</small></a><nav class="side-nav"></nav>`;
+  document.body.prepend(aside);
+  if(!document.querySelector(".menu-backdrop")){
+    const backdrop=document.createElement("div");
+    backdrop.className="menu-backdrop";
+    document.body.appendChild(backdrop);
+  }
 }
 function simplifyDrawerNavigation(){
   const sideNav=document.querySelector(".side-nav");
   if(!sideNav||sideNav.dataset.primaryOnly)return;
   sideNav.dataset.primaryOnly="true";
-  sideNav.innerHTML=primaryNavItems.map(([label,href])=>`<a class="drawer-primary-link" href="${href}">📁 ${label}</a>`).join("");
+  const depth=location.pathname.split("/").filter(Boolean).length>1 ? "../" : "";
+  sideNav.innerHTML=primaryNavItems.map(([label,href])=>`<a class="drawer-primary-link" href="${depth}${href}">📁 ${label}</a>`).join("");
 }
 function ensureBackTopButton(){
   if(document.querySelector(".back-top-button")||document.querySelector(".admin-page"))return;
@@ -459,6 +474,7 @@ function renderArticleDetail(articles){
   document.title=`${localizedArticle(article,"title")} | TeaSourcex Blog`;
 }
 function applyProductDetail(products){
+  if(document.querySelector(".module-page .content-document"))return;
   const slug=location.pathname.split("/").pop()?.replace(".html","");
   const product=products.find(item=>item.slug===slug);
   if(!product)return;
@@ -544,6 +560,7 @@ function applyLanguage(lang){
   translateAttributes(lang);
 }
 createMainNavigation();
+ensureDrawerNavigation();
 simplifyDrawerNavigation();
 const languageSwitch=createLanguageSwitch();
 const languageSelect=languageSwitch.querySelector("select");

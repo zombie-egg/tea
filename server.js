@@ -69,12 +69,15 @@ function isAuthorized(req) {
 
 function cleanSubmission(payload, type) {
   const allowed = type === "sample"
-    ? ["product_type", "sample_quantity", "monthly_demand", "email", "message"]
-    : ["company", "contact", "email", "phone", "interest", "quantity", "message"];
+    ? ["product_type", "product_category", "sample_quantity", "monthly_demand", "monthly_volume", "email", "phone", "full_name", "company", "job_title", "country", "shipping_address", "current_supplier", "message"]
+    : ["company", "contact", "full_name", "job_title", "country", "email", "phone", "interest", "quantity", "source", "message"];
   const cleaned = {};
   allowed.forEach(key => {
     cleaned[key] = String(payload[key] || "").trim();
   });
+  if (type === "sample" && !cleaned.product_type) cleaned.product_type = cleaned.product_category;
+  if (type === "sample" && !cleaned.monthly_demand) cleaned.monthly_demand = cleaned.monthly_volume;
+  if (type === "inquiry" && !cleaned.contact) cleaned.contact = cleaned.full_name;
   cleaned.id = crypto.randomUUID();
   cleaned.createdAt = new Date().toISOString();
   cleaned.type = type;

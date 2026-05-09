@@ -1094,6 +1094,105 @@ textarea:focus {
   font-size: 0.95rem;
 }
 
+.module-page {
+  padding-top: 92px;
+}
+
+.doc-hero {
+  position: relative;
+  display: grid;
+  min-height: min(72vh, 720px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--tea-green-deep);
+  box-shadow: var(--shadow-card);
+}
+
+.doc-hero img {
+  width: 100%;
+  height: 100%;
+  min-height: min(72vh, 720px);
+  object-fit: cover;
+  filter: saturate(0.9) contrast(1.08);
+}
+
+.doc-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(4, 32, 26, 0.82), rgba(4, 32, 26, 0.26) 54%, rgba(255, 255, 255, 0.04)),
+    url("../images/paper-grain.svg") center/520px 780px;
+  mix-blend-mode: multiply;
+}
+
+.doc-hero-copy {
+  position: absolute;
+  inset: auto auto 8% 6%;
+  z-index: 1;
+  width: min(780px, 88%);
+}
+
+.doc-hero-copy h1,
+.doc-hero-copy p,
+.doc-hero-copy .eyebrow {
+  color: #f7fbfa;
+}
+
+.doc-hero-copy h1 {
+  font-size: clamp(40px, 6.2vw, 84px);
+}
+
+.content-document {
+  display: grid;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.content-section {
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--line-soft);
+  background:
+    url("../images/paper-grain.svg") center/520px 780px,
+    rgba(250, 253, 252, 0.72);
+  box-shadow: var(--shadow-soft);
+}
+
+.content-section h2 {
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(18, 63, 53, 0.18);
+}
+
+.content-section h3 {
+  margin-top: 22px;
+  color: var(--tea-green-deep);
+}
+
+.content-section p {
+  max-width: 1060px;
+  font-size: 18px;
+}
+
+.doc-highlight {
+  padding: 18px 20px;
+  color: var(--tea-green-deep);
+  background: rgba(232, 239, 236, 0.82);
+  border-left: 5px solid var(--tea-green);
+  font-weight: 800;
+}
+
+.doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-top: 8px;
+}
+
+.form-section {
+  border-color: rgba(18, 63, 53, 0.32);
+  background: rgba(255, 255, 255, 0.78);
+}
+
 html[lang="en"] .lang-zh {
   display: none;
 }
