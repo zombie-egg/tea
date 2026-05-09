@@ -487,7 +487,7 @@ function applyProductDetail(products){
 }
 function applyMediaData(media){
   if(!media)return;
-  const video=document.querySelector(".hero-video");
+  const video=document.querySelector(".doc-hero-video, .hero-video");
   if(video){
     const source=video.querySelector("source");
     if(media.heroPoster){

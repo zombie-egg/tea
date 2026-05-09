@@ -106,6 +106,10 @@
 		display: none;
 	}
 
+	.home-video-hero {
+		height: 260px;
+	}
+
 	.hero::after {
 		content: "";
 		position: absolute;
