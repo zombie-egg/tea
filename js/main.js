@@ -6,8 +6,8 @@ const languageDictionary={
   "About":"关于我们",
   "Products":"产品",
   "Solutions":"解决方案",
-  "Quality":"质量保障",
-  "Quality Assurance":"质量保障",
+  "Quality":"品质保障",
+  "Quality Assurance":"品质保障",
   "Manufacture":"制造能力",
   "Resources":"资源",
   "Contact":"联系我们",
@@ -61,7 +61,7 @@ const languageDictionary={
   "Custom formulas.":"定制配方。",
   "F&B Chains":"餐饮连锁",
   "Store-ready SOPs.":"门店可用SOP。",
-  "Products & Services":"产品与服务",
+  "Products & Services":"产品",
   "Tea ingredients and services":"茶饮原料与服务",
   "Core categories for beverage development and production.":"覆盖饮品研发与量产的核心品类。",
   "RTD Tea Bases":"即饮茶基底",
@@ -349,22 +349,58 @@ function ensureWhatsAppFloat(){
   document.body.appendChild(link);
 }
 const primaryNavItems=[
-  ["Home","index.html"],
-  ["About","about.html"],
-  ["Products","products.html"],
-  ["Quality Assurance","quality.html"],
-  ["Manufacture","solutions.html"],
-  ["FAQs","resources.html#faq"],
-  ["Contact","contact.html"],
-  ["Recruitment","about.html#team"]
+  ["About","index.html",[
+    ["Brand Story","about/brand-story.html"],
+    ["Factory & Capacity","about/factory-capacity.html"],
+    ["Our Team","about/team.html"]
+  ]],
+  ["Products","products.html",[
+    ["RTD Tea Bases","products/rtd-tea-bases.html"],
+    ["Tea Extracts & Powders","products/tea-extracts-powders.html"],
+    ["Tea Ingredients","products/tea-ingredients.html"],
+    ["OEM/ODM Service","products/oem-odm-service.html"]
+  ]],
+  ["Solutions","solutions.html",[
+    ["For Beverage Manufacturers","solutions/beverage-manufacturers.html"],
+    ["For Brands / OEM Partner","solutions/brands-oem-partner.html"],
+    ["For F&B Chains","solutions/fb-chains.html"]
+  ]],
+  ["Quality Assurance","quality.html",[
+    ["Certifications","quality/certifications.html"],
+    ["QA System","quality/qa-system.html"],
+    ["R&D Capability","quality/rd-capability.html"]
+  ]],
+  ["Resources","resources.html",[
+    ["Blog / Tea Knowledge","resources/blog.html"],
+    ["Recipe & SOP Library","resources/sop-library.html"],
+    ["FAQ","resources/faq.html"]
+  ]],
+  ["Contact","contact.html",[
+    ["Inquiry Form","contact/inquiry.html"],
+    ["Sample Request Form","contact/sample-request.html"]
+  ]]
 ];
+function navLabel(label, prefix=""){
+  const zh=languageDictionary[`${prefix}${label}`]||(prefix ? `${prefix}${languageDictionary[label]||label}` : languageDictionary[label]||label);
+  return `<span class="lang-en">${prefix}${label}</span><span class="lang-zh">${zh}</span>`;
+}
 function createMainNavigation(){
   if(document.querySelector(".admin-page")||document.querySelector(".site-top-nav"))return;
   const nav=document.createElement("nav");
   nav.className="site-top-nav";
   nav.setAttribute("aria-label","Primary navigation");
   const depth=location.pathname.split("/").filter(Boolean).length>1 ? "../" : "";
-  nav.innerHTML=primaryNavItems.map(([label,href])=>`<a href="${depth}${href}">${label}</a>`).join("");
+  nav.innerHTML=`
+    <div class="site-top-nav-inner">
+      ${primaryNavItems.map(([label,href,children])=>`
+        <div class="site-nav-item">
+          <a class="site-nav-link" href="${depth}${href}">${navLabel(label)}</a>
+          <div class="site-nav-dropdown">
+            ${children.map(([childLabel,childHref])=>`<a href="${depth}${childHref}">${navLabel(childLabel,"📁 ")}</a>`).join("")}
+          </div>
+        </div>
+      `).join("")}
+    </div>`;
   document.body.prepend(nav);
 }
 function ensureDrawerNavigation(){
@@ -385,7 +421,7 @@ function simplifyDrawerNavigation(){
   if(!sideNav||sideNav.dataset.primaryOnly)return;
   sideNav.dataset.primaryOnly="true";
   const depth=location.pathname.split("/").filter(Boolean).length>1 ? "../" : "";
-  sideNav.innerHTML=primaryNavItems.map(([label,href])=>`<a class="drawer-primary-link" href="${depth}${href}">📁 ${label}</a>`).join("");
+  sideNav.innerHTML=primaryNavItems.map(([label,href])=>`<a class="drawer-primary-link" href="${depth}${href}">${navLabel(label,"📁 ")}</a>`).join("");
 }
 function ensureBackTopButton(){
   if(document.querySelector(".back-top-button")||document.querySelector(".admin-page"))return;
@@ -396,6 +432,46 @@ function ensureBackTopButton(){
   button.innerHTML='↑';
   button.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
   document.body.appendChild(button);
+}
+function ensureGlobalFooter(){
+  if(document.querySelector(".global-footer")||document.querySelector(".admin-page"))return;
+  const depth=location.pathname.split("/").filter(Boolean).length>1 ? "../" : "";
+  const footer=document.createElement("footer");
+  footer.className="global-footer";
+  footer.innerHTML=`
+    <section class="global-footer-cta">
+      <div>
+        <h2><span class="lang-en">Ready to Build Something Worth Drinking?</span><span class="lang-zh">准备好打造一款值得细品的佳作了吗？</span></h2>
+        <p><span class="lang-en">Whether you're launching a new product line or looking for a more reliable supply partner — we'd like to help. Start with a sample.</span><span class="lang-zh">无论您是即将推出全新的产品系列，还是正在寻找更值得信赖的供应合作伙伴——我们都乐意为您效劳。不妨先从索取样品开始吧。</span></p>
+      </div>
+      <nav>
+        <a class="btn primary" href="${depth}contact/sample-request.html"><span class="lang-en">Request a Free Sample →</span><span class="lang-zh">索取免费样品 →</span></a>
+        <a class="btn ghost" href="${depth}contact.html"><span class="lang-en">Contact Us</span><span class="lang-zh">联系我们</span></a>
+      </nav>
+    </section>
+    <section class="global-footer-main">
+      <div class="global-footer-brand">
+        <a class="brand" href="${depth}index.html"><span>茶</span><strong>TeaSourcex</strong><small>Tea Partner</small></a>
+        <p><span class="lang-en">TeaSourcex — Origin Tea, Global Reach</span><span class="lang-zh">TeaSourcex — 源自原产地，通达全球</span></p>
+      </div>
+      <div>
+        <h3><span class="lang-en">Quick Links</span><span class="lang-zh">快速导航</span></h3>
+        <p class="global-footer-links">
+          <a href="${depth}products.html"><span class="lang-en">Products</span><span class="lang-zh">产品</span></a>
+          <a href="${depth}solutions.html"><span class="lang-en">Solutions</span><span class="lang-zh">解决方案</span></a>
+          <a href="${depth}quality.html"><span class="lang-en">Quality</span><span class="lang-zh">品质</span></a>
+          <a href="${depth}resources.html"><span class="lang-en">Resources</span><span class="lang-zh">资源</span></a>
+          <a href="${depth}contact.html"><span class="lang-en">Contact</span><span class="lang-zh">联系我们</span></a>
+        </p>
+      </div>
+      <div>
+        <h3><span class="lang-en">Contact</span><span class="lang-zh">联系方式</span></h3>
+        <p><span data-contact-email>Email</span> / WhatsApp / <span class="lang-en">Factory Address</span><span class="lang-zh">工厂地址</span><br><span class="lang-en">Guangzhou</span><span class="lang-zh">广州</span></p>
+      </div>
+    </section>
+    <section class="global-footer-bottom">© 2026 TeaSourcex. All rights reserved. | Privacy Policy</section>
+  `;
+  document.body.appendChild(footer);
 }
 function localizedProduct(product, field){
   return currentLang()==="zh" && product[`${field}Zh`] ? product[`${field}Zh`] : product[field];
@@ -424,7 +500,6 @@ function renderProducts(products){
       <div>
         <h3>${escapeHtml(localizedProduct(product,"title"))}</h3>
         <p>${escapeHtml(localizedProduct(product,"summary"))}</p>
-        <a href="products/${escapeHtml(product.slug)}.html">Details</a>
       </div>
     </article>
   `).join("");
@@ -559,9 +634,10 @@ async function loadSiteData(){
 }
 function createLanguageSwitch(){
   const switcher=document.createElement("label");
-  switcher.className="language-switch standalone-language-switch";
+  const topNav=document.querySelector(".site-top-nav");
+  switcher.className=topNav?"language-switch nav-language-switch":"language-switch standalone-language-switch";
   switcher.innerHTML='<span data-lang-label>Language</span><select aria-label="Language"><option value="en">English</option><option value="zh">Chinese</option></select>';
-  document.body.prepend(switcher);
+  (topNav?.querySelector(".site-top-nav-inner")||document.body).appendChild(switcher);
   return switcher;
 }
 const originalTextNodes=new WeakMap();
@@ -603,6 +679,7 @@ languageSelect.value=localStorage.getItem("siteLanguage")||"en";
 languageSelect.addEventListener("change",()=>applyLanguage(languageSelect.value));
 ensureWhatsAppFloat();
 ensureBackTopButton();
+ensureGlobalFooter();
 applyLanguage(languageSelect.value);
 document.querySelector(".mobile-menu-btn")?.addEventListener("click",()=>body.classList.toggle("menu-open"));
 document.querySelector(".menu-backdrop")?.addEventListener("click",()=>body.classList.remove("menu-open"));
