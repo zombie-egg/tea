@@ -1159,6 +1159,12 @@ textarea:focus {
   line-height: 1.12;
 }
 
+.hero-title-zh {
+  display: grid;
+  gap: 0.08em;
+  max-width: 8.5em;
+}
+
 .home-video-hero .doc-hero-copy p {
   max-width: 780px;
   font-size: clamp(16px, 1.55vw, 22px);
@@ -1166,6 +1172,13 @@ textarea:focus {
 
 .home-video-hero .hero-actions {
   margin-top: 18px;
+}
+
+.sample-entry {
+  margin-top: 12px;
+  color: #fff;
+  border-color: rgba(8, 45, 38, 0.7);
+  background: var(--tea-green-deep);
 }
 
 .doc-hero::after {

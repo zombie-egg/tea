@@ -513,10 +513,22 @@ function applySiteData(){
 function ensureAutoplayVideos(){
   document.querySelectorAll("video[autoplay]").forEach(video=>{
     video.muted=true;
+    video.defaultMuted=true;
     video.playsInline=true;
+    video.setAttribute("muted","");
+    video.setAttribute("playsinline","");
+    video.setAttribute("webkit-playsinline","");
     const play=()=>video.play().catch(()=>{});
+    video.load();
     if(video.readyState>=2)play();
-    else video.addEventListener("loadeddata",play,{once:true});
+    else {
+      video.addEventListener("loadedmetadata",play,{once:true});
+      video.addEventListener("canplay",play,{once:true});
+    }
+    setTimeout(play,450);
+    ["pointerdown","touchstart","scroll","visibilitychange"].forEach(eventName=>{
+      window.addEventListener(eventName,play,{once:true,passive:true});
+    });
   });
 }
 async function loadSiteData(){
