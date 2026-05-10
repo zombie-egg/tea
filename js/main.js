@@ -707,6 +707,16 @@ document.querySelectorAll(".timeline-card").forEach(card=>card.addEventListener(
   document.querySelectorAll(".timeline-card").forEach(item=>item.classList.remove("is-active"));
   card.classList.add("is-active","open");
 }));
+document.querySelectorAll("[data-card-link]").forEach(card=>{
+  const openCard=()=>{ window.location.href=card.dataset.cardLink; };
+  card.addEventListener("click",openCard);
+  card.addEventListener("keydown",event=>{
+    if(event.key==="Enter"||event.key===" "){
+      event.preventDefault();
+      openCard();
+    }
+  });
+});
 if(typeof filterCards==="function"){
 filterCards(".product-grid",".filter-bar [data-filter]",".product-card");
 filterCards(".blog-list",".tag-filter [data-filter]",".blog-card");
