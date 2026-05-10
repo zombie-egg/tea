@@ -179,7 +179,8 @@
 	.advantages-grid,
 	.process-flow,
 	.form-row,
-	.blog-tools {
+	.blog-tools,
+	.blog-article-grid {
 		grid-template-columns: 1fr;
 	}
 
@@ -248,6 +249,15 @@
 	.panel {
 		scroll-margin-top: 82px;
 	}
+
+	.blog-outline-card {
+		border-radius: 0;
+	}
+
+	.blog-meta div {
+		grid-template-columns: 1fr;
+		gap: 2px;
+	}
 }
 
 @media (max-width: 420px) {
@@ -271,5 +281,23 @@
 	.tea-decoration a {
 		min-height: 74px;
 		border-radius: 10px;
+	}
+
+	.blog-outline-card header {
+		grid-template-columns: 1fr;
+	}
+
+	.blog-number {
+		width: 48px;
+		height: 48px;
+	}
+
+	.blog-category-row {
+		justify-content: stretch;
+	}
+
+	.blog-category-row a {
+		justify-content: center;
+		width: 100%;
 	}
 }

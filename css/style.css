@@ -1903,6 +1903,216 @@ textarea,
   font-size: 18px;
 }
 
+.blog-index {
+  gap: clamp(24px, 3vw, 42px);
+}
+
+.blog-index-intro {
+  display: grid;
+  gap: 14px;
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.blog-index-intro h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.blog-index-intro p:not(.eyebrow) {
+  margin: 0 auto;
+  color: var(--ink);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.55;
+}
+
+.blog-category-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.blog-category-row a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 9px 16px;
+  color: var(--tea-green-deep);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(18, 63, 53, 0.16);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.blog-article-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 30px);
+}
+
+.blog-outline-card {
+  display: grid;
+  gap: 18px;
+  padding: clamp(22px, 2.8vw, 34px);
+  background:
+    url("../images/paper-grain.svg") center/520px 780px,
+    rgba(255, 255, 255, 0.74);
+  background-blend-mode: multiply, normal;
+  border: 1px solid rgba(18, 63, 53, 0.14);
+  border-radius: 8px;
+  box-shadow: 0 18px 42px rgba(8, 45, 38, 0.08);
+}
+
+.blog-outline-card header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.blog-number {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  color: #fff;
+  background: var(--tea-green-deep);
+  border-radius: 50%;
+  font: 900 17px/1 "Merriweather", Georgia, serif;
+}
+
+.blog-kicker {
+  margin: 0 0 8px;
+  color: var(--tea-green);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-outline-card h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+  font-size: clamp(24px, 2.2vw, 34px);
+  line-height: 1.22;
+}
+
+.blog-outline-card h3 {
+  margin: 2px 0 -4px;
+  color: var(--tea-green-deep);
+  font: 900 13px/1.2 "Noto Sans SC", Arial, sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.blog-meta {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 14px 0;
+  border-top: 1px solid rgba(18, 63, 53, 0.12);
+  border-bottom: 1px solid rgba(18, 63, 53, 0.12);
+}
+
+.blog-meta div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+}
+
+.blog-meta dt {
+  color: var(--tea-green-deep);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-meta dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.blog-summary {
+  margin: 0;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.blog-outline-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: blog-outline;
+}
+
+.blog-outline-list li {
+  position: relative;
+  min-height: 34px;
+  padding: 8px 10px 8px 44px;
+  color: var(--muted);
+  background: rgba(246, 249, 248, 0.74);
+  border: 1px solid rgba(18, 63, 53, 0.08);
+  border-radius: 8px;
+  line-height: 1.55;
+  counter-increment: blog-outline;
+}
+
+.blog-outline-list li::before {
+  content: counter(blog-outline);
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  color: var(--tea-green-deep);
+  background: rgba(159, 184, 173, 0.32);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.blog-tag-system {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.blog-tag-system h2 {
+  text-align: center;
+}
+
+.blog-tag-system p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: none;
+}
+
+.blog-tag-system p > span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 7px 12px;
+  color: var(--tea-green-deep);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(18, 63, 53, 0.14);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .doc-highlight {
   padding: 18px 20px;
   color: var(--tea-green-deep);
@@ -1916,6 +2126,12 @@ textarea,
   flex-wrap: wrap;
   gap: 14px;
   padding-top: 8px;
+}
+
+.content-document .doc-actions .btn.ghost {
+  color: var(--tea-green-deep);
+  background: rgba(255, 255, 255, 0.68);
+  border-color: rgba(18, 63, 53, 0.24);
 }
 
 .form-section {
