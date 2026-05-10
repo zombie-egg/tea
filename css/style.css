@@ -737,6 +737,13 @@ p {
   color: var(--muted);
 }
 
+.home-stats-panel {
+  margin-top: clamp(10px, 2.4vw, 28px);
+  margin-bottom: clamp(8px, 2vw, 22px);
+  padding-top: clamp(18px, 2.8vw, 34px);
+  padding-bottom: clamp(18px, 2.8vw, 34px);
+}
+
 .timeline-scroll {
   display: grid;
   grid-auto-flow: column;
@@ -1300,6 +1307,10 @@ textarea:focus {
 
 .visual-entry-section {
   background: transparent;
+}
+
+.home-serve-panel {
+  padding-top: clamp(10px, 2vw, 24px);
 }
 
 .visual-entry-head {
