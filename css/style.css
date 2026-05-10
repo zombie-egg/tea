@@ -1134,11 +1134,20 @@ textarea:focus {
   min-height: inherit;
   object-fit: cover;
   filter: saturate(0.92) contrast(1.05);
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
 .home-video-hero {
   height: clamp(430px, 58vh, 640px);
   min-height: 0;
+  background:
+    linear-gradient(90deg, rgba(4, 32, 26, 0.82), rgba(4, 32, 26, 0.2)),
+    url("https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1800&q=85") center/cover;
+}
+
+.home-video-hero.video-ready .doc-hero-video {
+  opacity: 1;
 }
 
 .home-video-hero .doc-hero-video {
