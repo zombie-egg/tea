@@ -1134,45 +1134,14 @@ textarea:focus {
   min-height: inherit;
   object-fit: cover;
   filter: saturate(0.92) contrast(1.05);
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.6s ease;
 }
 
 .home-video-hero {
   height: clamp(430px, 58vh, 640px);
   min-height: 0;
-  background:
-    linear-gradient(90deg, rgba(4, 32, 26, 0.82), rgba(4, 32, 26, 0.2)),
-    url("https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1800&q=85") center/cover;
-}
-
-.home-video-hero.video-ready .doc-hero-video {
-  opacity: 1;
-}
-
-.hero-motion-bg {
-  position: absolute;
-  inset: -6%;
-  background:
-    linear-gradient(90deg, rgba(4, 32, 26, 0.34), rgba(4, 32, 26, 0.05)),
-    url("https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1800&q=85") center/cover;
-  filter: saturate(0.92) contrast(1.06);
-  transform: scale(1.04) translate3d(0, 0, 0);
-  animation: heroMotionLoop 18s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
-.use-motion-bg .doc-hero-video {
-  display: none;
-}
-
-@keyframes heroMotionLoop {
-  from {
-    transform: scale(1.05) translate3d(-2.2%, -1.2%, 0);
-  }
-  to {
-    transform: scale(1.16) translate3d(2.2%, 1.2%, 0);
-  }
+  background: var(--tea-green-deep);
 }
 
 .home-video-hero .doc-hero-video {
