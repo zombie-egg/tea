@@ -512,6 +512,7 @@ function applySiteData(){
 }
 function ensureAutoplayVideos(){
   document.querySelectorAll("video[autoplay]").forEach(video=>{
+    if(video.closest(".use-motion-bg"))return;
     video.muted=true;
     video.defaultMuted=true;
     video.playsInline=true;

@@ -1150,6 +1150,31 @@ textarea:focus {
   opacity: 1;
 }
 
+.hero-motion-bg {
+  position: absolute;
+  inset: -6%;
+  background:
+    linear-gradient(90deg, rgba(4, 32, 26, 0.34), rgba(4, 32, 26, 0.05)),
+    url("https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1800&q=85") center/cover;
+  filter: saturate(0.92) contrast(1.06);
+  transform: scale(1.04) translate3d(0, 0, 0);
+  animation: heroMotionLoop 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.use-motion-bg .doc-hero-video {
+  display: none;
+}
+
+@keyframes heroMotionLoop {
+  from {
+    transform: scale(1.05) translate3d(-2.2%, -1.2%, 0);
+  }
+  to {
+    transform: scale(1.16) translate3d(2.2%, 1.2%, 0);
+  }
+}
+
 .home-video-hero .doc-hero-video {
   height: 100%;
   min-height: 0;
@@ -1198,12 +1223,13 @@ textarea:focus {
     linear-gradient(90deg, rgba(4, 32, 26, 0.82), rgba(4, 32, 26, 0.26) 54%, rgba(255, 255, 255, 0.04)),
     url("../images/paper-grain.svg") center/520px 780px;
   mix-blend-mode: multiply;
+  z-index: 0;
 }
 
 .doc-hero-copy {
   position: absolute;
   inset: auto auto 8% 6%;
-  z-index: 1;
+  z-index: 2;
   width: min(780px, 88%);
 }
 
