@@ -180,7 +180,9 @@
 	.process-flow,
 	.form-row,
 	.blog-tools,
-	.blog-article-grid {
+	.blog-article-grid,
+	.sop-intro-copy,
+	.sop-card-grid {
 		grid-template-columns: 1fr;
 	}
 
@@ -255,6 +257,11 @@
 	}
 
 	.blog-meta div {
+		grid-template-columns: 1fr;
+		gap: 2px;
+	}
+
+	.sop-card dl div {
 		grid-template-columns: 1fr;
 		gap: 2px;
 	}
