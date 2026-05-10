@@ -1230,6 +1230,10 @@ textarea:focus {
   color: var(--tea-green);
 }
 
+.resource-section-action {
+  margin: 22px 0 0;
+}
+
 .module-page {
   padding-top: 92px;
   padding-right: 0;
@@ -2164,6 +2168,14 @@ textarea,
   line-height: 1.65;
 }
 
+.sop-asset-note {
+  max-width: 1180px;
+  color: var(--tea-green-deep);
+  font-size: clamp(17px, 1.7vw, 21px);
+  font-weight: 800;
+  line-height: 1.65;
+}
+
 .sop-card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2244,6 +2256,77 @@ textarea,
 .sop-card li {
   padding-left: 4px;
   line-height: 1.55;
+}
+
+.sop-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.sop-card-actions .btn {
+  flex: 1 1 132px;
+  justify-content: center;
+  text-align: center;
+}
+
+.sop-detail-section {
+  display: grid;
+  gap: 18px;
+}
+
+.sop-detail {
+  scroll-margin-top: 96px;
+  padding: clamp(20px, 2.4vw, 32px);
+  background:
+    url("../images/paper-grain.svg") center/520px 780px,
+    rgba(255, 255, 255, 0.7);
+  background-blend-mode: multiply, normal;
+  border: 1px solid rgba(18, 63, 53, 0.14);
+  border-radius: 8px;
+}
+
+.sop-detail h3 {
+  margin: 0 0 12px;
+  color: var(--tea-green-deep);
+  font-size: clamp(23px, 2vw, 32px);
+}
+
+.sop-detail h4 {
+  margin: 0 0 10px;
+  color: var(--tea-green-deep);
+  font-family: "Noto Sans SC", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sop-step-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.8vw, 34px);
+}
+
+.sop-step-columns ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 22px;
+  color: var(--muted);
+}
+
+.sop-step-columns li {
+  padding-left: 4px;
+  line-height: 1.65;
+}
+
+.sop-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
 }
 
 .sop-footer-note {

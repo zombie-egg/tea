@@ -182,7 +182,8 @@
 	.blog-tools,
 	.blog-article-grid,
 	.sop-intro-copy,
-	.sop-card-grid {
+	.sop-card-grid,
+	.sop-step-columns {
 		grid-template-columns: 1fr;
 	}
 
