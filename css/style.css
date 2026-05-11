@@ -1471,6 +1471,9 @@ textarea:focus {
 
 .visual-entry-action,
 .product-all-action {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin: 24px 0 0;
   text-align: center;
 }
