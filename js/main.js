@@ -39,7 +39,7 @@ const languageDictionary={
   "📁 FAQ":"📁 常见问题",
   "📁 Inquiry Form":"📁 询价表单",
   "📁 Sample Request Form":"📁 样品申请",
-  "Home":"首页",
+  "Home":"家",
   "B2B Tea Supply":"B2B 茶饮供应",
   "Tea bases, extracts and OEM solutions.":"茶基底、茶萃取与OEM解决方案。",
   "Reliable ingredients for beverage manufacturers, brands and F&B chains.":"为饮料制造商、品牌和餐饮连锁提供稳定茶饮原料。",
@@ -358,7 +358,8 @@ function ensureWhatsAppFloat(){
   document.body.appendChild(link);
 }
 const primaryNavItems=[
-  ["About","index.html",[
+  ["Home","index.html",null],
+  ["About","about.html",[
     ["Brand Story","about/brand-story.html"],
     ["Factory & Capacity","about/factory-capacity.html"],
     ["Our Team","about/team.html"]
@@ -405,14 +406,14 @@ function createMainNavigation(){
         <img src="${depth}images/teasourcex-logo.jpg" alt="TeaSourcex" />
       </a>
       <div class="site-top-nav-links">
-        ${primaryNavItems.map(([label,href,children],index)=>`
+        ${primaryNavItems.map(([label,href,children])=>`
           <div class="site-nav-item">
-            ${index===0
-              ? `<a class="site-nav-link" href="${depth}${href}">${navLabel(label)}</a>`
-              : `<button class="site-nav-link site-nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">${navLabel(label)}</button>`}
-            <div class="site-nav-dropdown">
+            ${children
+              ? `<button class="site-nav-link site-nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">${navLabel(label)}</button>`
+              : `<a class="site-nav-link" href="${depth}${href}">${navLabel(label)}</a>`}
+            ${children ? `<div class="site-nav-dropdown">
               ${children.map(([childLabel,childHref])=>`<a href="${depth}${childHref}">${navLabel(childLabel,"📁 ")}</a>`).join("")}
-            </div>
+            </div>` : ""}
           </div>
         `).join("")}
       </div>

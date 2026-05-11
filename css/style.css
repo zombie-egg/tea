@@ -1330,7 +1330,7 @@ textarea:focus {
 
 .home-video-hero {
   width: 100vw;
-  height: clamp(500px, 66vh, 760px);
+  height: clamp(620px, 78vh, 900px);
   min-height: 0;
   margin: -18px 0 46px;
   background: var(--tea-green-deep);
