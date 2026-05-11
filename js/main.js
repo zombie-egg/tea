@@ -205,6 +205,8 @@ const languageDictionary={
   "Message":"留言",
   "Submit Inquiry":"提交询价",
   "Contact Info":"联系方式",
+  "Company Name":"公司全称",
+  "Domain":"域名",
   "Business address":"公司地址",
   "WhatsApp":"WhatsApp",
   "Sample Request Form":"样品申请表",
@@ -350,7 +352,7 @@ function ensureWhatsAppFloat(){
   if(document.querySelector(".whatsapp-float")||document.querySelector(".admin-page"))return;
   const link=document.createElement("a");
   link.className="whatsapp-float";
-  link.href="https://wa.me/8600000000000";
+  link.href="https://wa.me/85246550861";
   link.target="_blank";
   link.rel="noopener";
   link.setAttribute("aria-label","Contact on WhatsApp");
@@ -469,7 +471,7 @@ function ensureGlobalFooter(){
     </section>
     <section class="global-footer-main">
       <div class="global-footer-brand">
-        <a class="brand logo-brand" href="${depth}index.html"><img src="${depth}images/teasourcex-logo.jpg" alt="TeaSourcex" /></a>
+        <a class="brand logo-brand" href="${depth}index.html"><img src="${depth}images/teasourcex-footer-logo.svg" alt="TeaSourcex" /></a>
         <p><span class="lang-en">TeaSourcex — Origin Tea, Global Reach</span><span class="lang-zh">TeaSourcex — 源自原产地，通达全球</span></p>
       </div>
       <div>
@@ -484,7 +486,14 @@ function ensureGlobalFooter(){
       </div>
       <div>
         <h3><span class="lang-en">Contact</span><span class="lang-zh">联系方式</span></h3>
-        <p><span data-contact-email>Email</span> / WhatsApp / <span class="lang-en">Factory Address</span><span class="lang-zh">工厂地址</span><br><span class="lang-en">Guangzhou</span><span class="lang-zh">广州</span></p>
+        <p class="global-footer-contact">
+          <span class="lang-en">Company</span><span class="lang-zh">公司全称</span>: <span data-contact-company>Guangzhou Yuanjin Food Co., Ltd.</span><br>
+          <span class="lang-en">Address</span><span class="lang-zh">地址</span>: <span data-contact-address>Guangzhou</span><br>
+          <span class="lang-en">Email</span><span class="lang-zh">邮箱</span>: <span data-contact-email>Email</span><br>
+          <span class="lang-en">Phone</span><span class="lang-zh">电话</span>: <span data-contact-phone>Phone</span><br>
+          WhatsApp: <span data-contact-whatsapp>WhatsApp</span><br>
+          <span class="lang-en">Domain</span><span class="lang-zh">域名</span>: <span data-contact-domain>www.teasourcex.com</span>
+        </p>
       </div>
     </section>
     <section class="global-footer-bottom">© 2026 TeaSourcex. All rights reserved. | Privacy Policy</section>
@@ -496,10 +505,13 @@ function localizedProduct(product, field){
 }
 function applyContactData(contact){
   if(!contact)return;
+  document.querySelectorAll("[data-contact-company]").forEach(node=>node.textContent=contact.company||"");
   document.querySelectorAll("[data-contact-address]").forEach(node=>node.textContent=contact.address||"");
   document.querySelectorAll("[data-contact-email]").forEach(node=>node.textContent=contact.email||"");
   document.querySelectorAll("[data-contact-phone]").forEach(node=>node.textContent=contact.phone||"");
-  const whatsappHref=contact.whatsapp?`https://wa.me/${String(contact.whatsapp).replace(/\D/g,"")}`:"https://wa.me/8600000000000";
+  document.querySelectorAll("[data-contact-whatsapp]").forEach(node=>node.textContent=contact.whatsappDisplay||"+852 46550861");
+  document.querySelectorAll("[data-contact-domain]").forEach(node=>node.textContent=contact.domain||"");
+  const whatsappHref=contact.whatsapp?`https://wa.me/${String(contact.whatsapp).replace(/\D/g,"")}`:"https://wa.me/85246550861";
   document.querySelectorAll("[data-whatsapp-link], .whatsapp-float").forEach(link=>link.href=whatsappHref);
 }
 function applyProductSelects(products){

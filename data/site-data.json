@@ -1,9 +1,12 @@
 {
   "contact": {
-    "address": "Guangzhou, Guangdong, China",
+    "company": "广州源津食品有限公司",
+    "domain": "www.teasourcex.com",
+    "address": "广东省广州市白云区太和镇永兴村锅底塘路2号",
     "email": "bruce@teasourcex.com",
-    "phone": "+852 46550861",
+    "phone": "+86 13071632772",
     "whatsapp": "85246550861",
+    "whatsappDisplay": "+852 46550861",
     "wechat": "+86 13071632772"
   },
   "media": {
