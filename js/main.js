@@ -358,7 +358,7 @@ function ensureWhatsAppFloat(){
   document.body.appendChild(link);
 }
 const primaryNavItems=[
-  ["About","about.html",[
+  ["About","index.html",[
     ["Brand Story","about/brand-story.html"],
     ["Factory & Capacity","about/factory-capacity.html"],
     ["Our Team","about/team.html"]
@@ -405,9 +405,11 @@ function createMainNavigation(){
         <img src="${depth}images/teasourcex-logo.jpg" alt="TeaSourcex" />
       </a>
       <div class="site-top-nav-links">
-        ${primaryNavItems.map(([label,href,children])=>`
+        ${primaryNavItems.map(([label,href,children],index)=>`
           <div class="site-nav-item">
-            <a class="site-nav-link" href="${depth}${href}">${navLabel(label)}</a>
+            ${index===0
+              ? `<a class="site-nav-link" href="${depth}${href}">${navLabel(label)}</a>`
+              : `<button class="site-nav-link site-nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">${navLabel(label)}</button>`}
             <div class="site-nav-dropdown">
               ${children.map(([childLabel,childHref])=>`<a href="${depth}${childHref}">${navLabel(childLabel,"📁 ")}</a>`).join("")}
             </div>
