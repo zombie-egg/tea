@@ -1800,7 +1800,7 @@ textarea:focus {
 .blog-preview-action {
   max-width: var(--content-max);
   margin: clamp(26px, 4vw, 44px) auto 0;
-  text-align: center;
+  text-align: left;
 }
 
 .blog-preview-action .btn.small {
@@ -1881,6 +1881,8 @@ textarea:focus {
   display: block;
   width: 100%;
   height: auto;
+  mix-blend-mode: screen;
+  filter: brightness(1.18) contrast(1.08);
 }
 
 .global-footer-contact {
