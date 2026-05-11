@@ -358,7 +358,7 @@ function ensureWhatsAppFloat(){
   document.body.appendChild(link);
 }
 const primaryNavItems=[
-  ["About","index.html",[
+  ["About","about.html",[
     ["Brand Story","about/brand-story.html"],
     ["Factory & Capacity","about/factory-capacity.html"],
     ["Our Team","about/team.html"]
@@ -401,14 +401,20 @@ function createMainNavigation(){
   const depth=location.pathname.split("/").filter(Boolean).length>1 ? "../" : "";
   nav.innerHTML=`
     <div class="site-top-nav-inner">
-      ${primaryNavItems.map(([label,href,children])=>`
-        <div class="site-nav-item">
-          <a class="site-nav-link" href="${depth}${href}">${navLabel(label)}</a>
-          <div class="site-nav-dropdown">
-            ${children.map(([childLabel,childHref])=>`<a href="${depth}${childHref}">${navLabel(childLabel,"📁 ")}</a>`).join("")}
+      <a class="site-logo" href="${depth}index.html" aria-label="TeaSourcex Home">
+        <img src="${depth}images/teasourcex-logo.jpg" alt="TeaSourcex" />
+      </a>
+      <div class="site-top-nav-links">
+        ${primaryNavItems.map(([label,href,children])=>`
+          <div class="site-nav-item">
+            <a class="site-nav-link" href="${depth}${href}">${navLabel(label)}</a>
+            <div class="site-nav-dropdown">
+              ${children.map(([childLabel,childHref])=>`<a href="${depth}${childHref}">${navLabel(childLabel,"📁 ")}</a>`).join("")}
+            </div>
           </div>
-        </div>
-      `).join("")}
+        `).join("")}
+      </div>
+      <div class="site-top-nav-controls"></div>
     </div>`;
   document.body.prepend(nav);
 }
@@ -417,7 +423,7 @@ function ensureDrawerNavigation(){
   const depth=location.pathname.split("/").filter(Boolean).length>1 ? "../" : "";
   const aside=document.createElement("aside");
   aside.className="sidebar";
-  aside.innerHTML=`<a class="brand" href="${depth}index.html"><span>茶</span><strong>TeaSourcex</strong><small>Tea Partner</small></a><nav class="side-nav"></nav>`;
+  aside.innerHTML=`<a class="brand logo-brand" href="${depth}index.html"><img src="${depth}images/teasourcex-logo.jpg" alt="TeaSourcex" /></a><nav class="side-nav"></nav>`;
   document.body.prepend(aside);
   if(!document.querySelector(".menu-backdrop")){
     const backdrop=document.createElement("div");
@@ -460,7 +466,7 @@ function ensureGlobalFooter(){
     </section>
     <section class="global-footer-main">
       <div class="global-footer-brand">
-        <a class="brand" href="${depth}index.html"><span>茶</span><strong>TeaSourcex</strong><small>Tea Partner</small></a>
+        <a class="brand logo-brand" href="${depth}index.html"><img src="${depth}images/teasourcex-logo.jpg" alt="TeaSourcex" /></a>
         <p><span class="lang-en">TeaSourcex — Origin Tea, Global Reach</span><span class="lang-zh">TeaSourcex — 源自原产地，通达全球</span></p>
       </div>
       <div>
@@ -646,7 +652,7 @@ function createLanguageSwitch(){
   const topNav=document.querySelector(".site-top-nav");
   switcher.className=topNav?"language-switch nav-language-switch":"language-switch standalone-language-switch";
   switcher.innerHTML='<span data-lang-label>Language</span><select aria-label="Language"><option value="en">English</option><option value="zh">Chinese</option></select>';
-  (topNav?.querySelector(".site-top-nav-inner")||document.body).appendChild(switcher);
+  (topNav?.querySelector(".site-top-nav-controls")||topNav?.querySelector(".site-top-nav-inner")||document.body).appendChild(switcher);
   return switcher;
 }
 const originalTextNodes=new WeakMap();
