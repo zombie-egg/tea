@@ -1472,7 +1472,9 @@ textarea:focus {
 .visual-entry-action,
 .product-all-action {
   display: flex;
+  grid-column: 1 / -1;
   justify-content: center;
+  justify-self: stretch;
   width: 100%;
   margin: 24px 0 0;
   text-align: center;
@@ -1867,25 +1869,24 @@ textarea:focus {
 }
 
 .global-footer .brand {
-  max-width: 380px;
+  max-width: 540px;
   margin-bottom: 18px;
   padding-bottom: 0;
   color: #fff;
 }
 
 .global-footer .logo-brand {
-  width: min(380px, 100%);
+  width: min(540px, 100%);
   padding: 0;
   border-radius: 8px;
   background: #08362e;
+  overflow: hidden;
 }
 
 .global-footer .logo-brand img {
   display: block;
   width: 100%;
   height: auto;
-  mix-blend-mode: screen;
-  filter: brightness(1.18) contrast(1.08);
 }
 
 .global-footer-contact {
