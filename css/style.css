@@ -1474,9 +1474,10 @@ textarea:focus {
   display: flex;
   grid-column: 1 / -1;
   justify-content: center;
-  justify-self: stretch;
-  width: 100%;
+  justify-self: center;
+  width: 100vw;
   margin: 24px 0 0;
+  margin-left: calc(50% - 50vw);
   text-align: center;
 }
 
@@ -1869,14 +1870,15 @@ textarea:focus {
 }
 
 .global-footer .brand {
-  max-width: 540px;
+  max-width: 600px;
+  margin-top: -14px;
   margin-bottom: 18px;
   padding-bottom: 0;
   color: #fff;
 }
 
 .global-footer .logo-brand {
-  width: min(540px, 100%);
+  width: min(600px, 100%);
   padding: 0;
   border-radius: 8px;
   background: #08362e;
