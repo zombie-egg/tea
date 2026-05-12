@@ -471,7 +471,7 @@ function ensureGlobalFooter(){
     </section>
     <section class="global-footer-main">
       <div class="global-footer-brand">
-        <a class="brand logo-brand" href="${depth}index.html"><img src="${depth}images/teasourcex-footer-logo.jpg" alt="TeaSourcex" /></a>
+        <a class="brand logo-brand" href="${depth}index.html"><img src="${depth}images/teasourcex-footer-logo.png" alt="TeaSourcex" /></a>
         <p><span class="lang-en">TeaSourcex — Origin Tea, Global Reach</span><span class="lang-zh">TeaSourcex — 源自原产地，通达全球</span></p>
       </div>
       <div>

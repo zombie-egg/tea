@@ -1477,7 +1477,7 @@ textarea:focus {
   justify-self: center;
   width: 100vw;
   margin: 24px 0 0;
-  margin-left: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw + 50px);
   text-align: center;
 }
 
